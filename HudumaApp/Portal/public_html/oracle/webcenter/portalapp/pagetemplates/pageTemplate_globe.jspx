@@ -118,7 +118,14 @@
                   <!-- Login form -->
                   <af:subform id="pt_sf1" defaultCommand="pt_logincb"
                               rendered="#{attrs.showLogin and !securityContext.authenticated}">
-                    <af:panelFormLayout id="pt_pfl1">
+                    <af:panelGroupLayout id="pt_pgl27" layout="horizontal">
+                      <af:commandButton text="Sign In" id="pt_cb3"
+                                        styleClass="signInButton"/>
+                      <af:spacer width="10" height="10" id="pt_s7"/>
+                      <af:commandButton text="Register" id="pt_cb4"
+                                        styleClass="regButton"/>
+                    </af:panelGroupLayout>
+                    <af:panelFormLayout id="pt_pfl1" rendered="false">
                       <af:panelLabelAndMessage id="pt_plam1"
                                                label="#{portalResource['username']}"
                                                for="pt_it1"
@@ -140,7 +147,7 @@
                     </af:panelFormLayout>
                     <af:spacer width="3" height="3" id="pt_s2"/>
                     <af:panelGroupLayout id="pt_pgl14" layout="horizontal"
-                                         halign="end">
+                                         halign="end" rendered="false">
                       <af:commandLink id="pt_logincb" text="Sign In"
                                       action="#{o_w_s_l_LoginBackingBean.doLogin}"
                                       inlineStyle="font-size:small; margin-left: -40px;"/>
@@ -197,7 +204,8 @@
                                 placeholder="I want to...."
                                 inlineStyle="width:645px !important;"/>
                   <af:commandButton id="pt_cb2" icon="/images/magnify_glass.png"
-                                    styleClass="searchButton"/>
+                                    styleClass="searchButton"
+                                    inlineStyle="border:none !important;"/>
                 </af:panelGroupLayout>
                 <af:outputText value="POPULAR SEARCHES: Renew Driving Licence, Apply For ID, Register My Business"
                                id="pt_ot9"
