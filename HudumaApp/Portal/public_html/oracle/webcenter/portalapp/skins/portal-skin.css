@@ -1,0 +1,1050 @@
+/* Copyright (c) 2008, 2010, Oracle and/or its affiliates. 
+All rights reserved. */
+
+/**
+ * WebCenter Portal default Skin
+ *
+ */
+
+
+/**
+ * Default Font Family, e.g.
+ * font-family: Tahoma,Verdana,Helvetica,sans-serif
+ */
+.AFDefaultFontFamily:alias
+{
+}
+
+
+/**
+ * Default Font Size, e.g.
+ * font-size: 11px;
+ */
+.AFDefaultFont:alias
+{
+}
+
+
+/**
+ * Text foreground color.
+ */
+.AFTextForeground:alias
+{
+/*
+  color: #333333;
+*/
+}
+
+
+/**
+ * Label text color.
+ */
+.AFLabelTextForeground:alias,
+.AFLabelTextForegroundDisabled:alias
+{
+}
+
+
+/**
+ * Font used in banner to display the page title.
+ */
+.AFBrandingBarTitle
+{
+}
+
+
+/**
+ * Input Components
+ *
+ */
+
+/* border and background on inputText components */
+.AFFormControlContentBorder:alias
+{
+}
+.AFFormControlContentBackground:alias
+{
+}
+
+/* foreground and background color on disabled inputText components */
+.AFFormControlContentForegroundDisabled:alias
+{
+}
+.AFFormControlContentBackgroundDisabled:alias
+{
+}
+
+
+/**
+ * Links
+ *
+ * Foreground color and border style for regular links, visited
+ * links, and active links.
+ */
+.AFLinkForeground:alias
+{
+}
+
+.AFVisitedLinkForeground:alias,
+.AFActiveLinkForeground:alias
+{
+}
+
+.AFActiveLinkBorder:alias
+{
+}
+
+
+/**
+ * Menus
+ *
+ * Menu items are items inside a menu, including sub-menus.
+ * Menu bar-items are items directly on a menuBar, similar to buttons.
+ *
+ */
+
+/* menu text color */
+.AFMenuTextForeground:alias
+{
+}
+
+/* menu item (height) */
+af|commandMenuItem::menu-item,
+af|goMenuItem::menu-item,
+af|menu::submenu
+{
+}
+
+/* menu item - highlight (color and background-color) */
+af|commandMenuItem:highlighted::menu-item-text,
+af|commandMenuItem:highlighted::menu-item-icon-style,
+af|commandMenuItem:highlighted::menu-item-accelerator,
+af|commandMenuItem:highlighted::menu-item-open-indicator,
+af|goMenuItem:highlighted::menu-item-text,
+af|goMenuItem:highlighted::menu-item-icon-style,
+af|goMenuItem:highlighted::menu-item-accelerator,
+af|goMenuItem:highlighted::menu-item-open-indicator,
+af|menu:highlighted::submenu-text,
+af|menu:highlighted::submenu-icon-style,
+af|menu:highlighted::submenu-accelerator,
+af|menu:highlighted::submenu-open-indicator
+{
+}
+
+/* menu bar-item (height)*/
+af|commandMenuItem::bar-item,
+af|goMenuItem::bar-item,
+af|menu::bar-item
+{
+}
+
+/* menu bar-item - highlight (background-image and background-color) */
+af|commandMenuItem::bar-item:highlighted,
+af|goMenuItem::bar-item:highlighted,
+af|menu::bar-item:highlighted
+{
+}
+
+/* menu bar-item - depressed (background-image and background-color) */
+af|commandMenuItem::bar-item:depressed,
+af|goMenuItem::bar-item:depressed,
+af|menu::bar-item:depressed
+{
+}
+
+
+
+/**
+ * Buttons
+ *
+ */
+
+/* Button background color, e.g. background-color: gray; background-image: ... */
+.AFButtonBackground:alias
+{
+}
+
+.AFButtonBackgroundHover:alias
+{
+}
+
+.AFButtonBackgroundActive:alias
+{
+}
+
+.AFButtonBackgroundFocus:alias
+{
+}
+
+.AFButtonBackgroundDisabled:alias
+{
+}
+
+/* Button border, also used by menus, e.g. border: 1px solid black; */
+.AFButtonBorder:alias
+{
+}
+
+.AFButtonBorderHover:alias
+{
+}
+
+.AFButtonBorderActive:alias,
+.AFButtonBorderDepressed:alias
+{
+}
+
+.AFButtonBorderDisabled:alias
+{
+}
+
+/* Button text color for regular buttons, e.g. color: black; */
+.AFButtonForeground:alias
+{
+}
+
+.AFButtonForegroundHover:alias
+{
+}
+
+.AFButtonForegroundDepressed:alias
+{
+}
+
+.AFButtonForegroundDisabled:alias
+{
+}
+
+/* Button text color for toolbar buttons with text */
+.AFButtonText:alias
+{
+}
+
+.AFButtonTextHover:alias
+{
+}
+
+.AFButtonTextDepressed:alias
+{
+}
+
+.AFButtonTextDisabled:alias
+{
+}
+
+
+/**
+ * DecorativeBoxes and PanelTabbed.  DecorativeBoxes are boxes with 
+ * decoration on all four sides and all four corners, e.g. rounded
+ * corners or shadows.  The styles used by decorativeBoxes are shared
+ * with the content area of panelTabbed (below the tabs themselves).
+ *
+ * There are three styles of tabs that should be skinned
+ *  1) normal (no theme)
+ *  2) level 1 (theme="medium")
+ *  3) level 2 (theme="light")
+ *
+ * For tabs, both the tabs themselves are skinned, as well as the 
+ * content area below the tabs.  The content area is what is shared
+ * with decorativeBox.
+ *
+ */
+
+
+/**
+ * Normal tabs, e.g. in dialogs, outside the "theme" hierarchy
+ *
+ * Specify the background images for each of the following aliases,
+ * plus a font and color for the tab text.
+ *
+ */
+
+/* normal unselected tabs */
+.AFTabAboveStartUnselectedBackground:alias:ltr
+{
+}
+.AFTabAboveStartUnselectedBackground:alias:rtl
+{
+} 
+.AFTabAboveMiddleUnselectedBackground:alias
+{
+}
+.AFTabAboveEndUnselectedBackground:alias:ltr
+{
+} 
+.AFTabAboveEndUnselectedBackground:alias:rtl
+{
+}
+af|panelTabbed::tab af|panelTabbed::tab-content,
+af|panelTabbed::tab af|panelTabbed::tab-text-link,
+af|navigationPane-tabs::tab af|navigationPane-tabs::tab-content,
+af|navigationPane-tabs::tab af|navigationPane-tabs::tab-link
+{
+}
+af|panelTabbed::tab:hover af|panelTabbed::tab-content,
+af|panelTabbed::tab:hover af|panelTabbed::tab-text-link,
+af|navigationPane-tabs::tab:hover af|navigationPane-tabs::tab-content,
+af|navigationPane-tabs::tab:hover af|navigationPane-tabs::tab-link
+{
+}
+
+/* normal selected tabs */
+.AFTabAboveStartSelectedBackground:alias:ltr
+{
+} 
+.AFTabAboveStartSelectedBackground:alias:rtl
+{
+}
+.AFTabAboveMiddleSelectedBackground:alias
+{
+}
+.AFTabAboveEndSelectedBackground:alias:ltr
+{
+} 
+.AFTabAboveEndSelectedBackground:alias:rtl
+{
+}
+af|panelTabbed::tab:selected af|panelTabbed::tab-content,
+af|panelTabbed::tab:selected af|panelTabbed::tab-text-link,
+af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-content,
+af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-link
+{
+}
+af|panelTabbed::tab:selected:hover af|panelTabbed::tab-content,
+af|panelTabbed::tab:selected:hover af|panelTabbed::tab-text-link,
+af|navigationPane-tabs::tab:selected:hover af|navigationPane-tabs::tab-content,
+af|navigationPane-tabs::tab:selected:hover af|navigationPane-tabs::tab-link
+{
+}
+
+/* normal content */
+af|panelTabbed::header-start
+{
+}
+af|panelTabbed::header-center
+{
+}
+af|panelTabbed::header-end
+{
+}
+af|panelTabbed::body-start
+{
+}
+af|panelTabbed::body
+{
+}
+af|panelTabbed::body-end
+{
+}
+af|panelTabbed::footer-start
+{
+}
+af|panelTabbed::footer-center
+{
+}
+af|panelTabbed::footer-end
+{
+}
+
+/* normal content rtl */
+af|panelTabbed::header-start:rtl
+{
+}
+af|panelTabbed::header-end:rtl
+{
+}
+af|panelTabbed::body-start:rtl
+{
+}
+af|panelTabbed::body-end:rtl
+{
+}
+af|panelTabbed::footer-start:rtl
+{
+}
+af|panelTabbed::footer-end:rtl
+{
+}
+
+
+/**
+ * Level 1 (medium) tabs.
+ *
+ * Specify the background images for each of the following aliases,
+ * plus a font and color for the tab text.
+ *
+ */
+
+/* level 1 unselected tabs */
+.AFTabAboveStartUnselectedLevel1Background:alias
+{
+}
+.AFTabAboveStartUnselectedLevel1Background:alias:rtl
+{
+}
+.AFTabAboveMiddleUnselectedLevel1Background:alias
+{
+}
+.AFTabAboveEndUnselectedLevel1Background:alias
+{
+}
+.AFTabAboveEndUnselectedLevel1Background:alias:rtl
+{
+}
+af|panelTabbed::tab af|panelTabbed::tab-content[theme="dark"],
+af|panelTabbed::tab af|panelTabbed::tab-text-link[theme="dark"],
+af|navigationPane-tabs::tab af|navigationPane-tabs::tab-link[theme="medium"],
+af|navigationPane-tabs::tab af|navigationPane-tabs::tab-content[theme="medium"]
+{
+}
+af|panelTabbed::tab:hover af|panelTabbed::tab-content[theme="dark"],
+af|panelTabbed::tab:hover af|panelTabbed::tab-text-link[theme="dark"],
+af|navigationPane-tabs::tab:hover af|navigationPane-tabs::tab-link[theme="medium"],
+af|navigationPane-tabs::tab:hover af|navigationPane-tabs::tab-content[theme="medium"]
+{
+}
+
+/* level 1 selected tabs */
+.AFTabAboveStartSelectedLevel1Background:alias
+{
+}
+.AFTabAboveStartSelectedLevel1Background:alias:rtl
+{ 
+}
+.AFTabAboveMiddleSelectedLevel1Background:alias
+{
+}
+.AFTabAboveEndSelectedLevel1Background:alias
+{
+}
+.AFTabAboveEndSelectedLevel1Background:alias:rtl
+{ 
+}
+af|panelTabbed::tab:selected af|panelTabbed::tab-content[theme="dark"],
+af|panelTabbed::tab:selected af|panelTabbed::tab-text-link[theme="dark"],
+af|panelTabbed::tab:selected:hover af|panelTabbed::tab-content[theme="dark"],
+af|panelTabbed::tab:selected:hover af|panelTabbed::tab-text-link[theme="dark"],
+af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-content[theme="medium"],
+af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-link[theme="medium"],
+af|navigationPane-tabs::tab:selected:hover af|navigationPane-tabs::tab-content[theme="medium"],
+af|navigationPane-tabs::tab:selected:hover af|navigationPane-tabs::tab-link[theme="medium"]
+{
+}
+
+/* level 1 content -- also used for "medium" decorativeBoxes */
+af|panelTabbed::header-start[theme="dark"],
+af|decorativeBox::top-start[theme="medium"]
+{
+}
+af|panelTabbed::header-center[theme="dark"],
+af|decorativeBox::top[theme="medium"]
+{
+}
+af|panelTabbed::header-end[theme="dark"],
+af|decorativeBox::top-end[theme="medium"]
+{
+}
+af|panelTabbed::body-start[theme="dark"],
+af|decorativeBox::start[theme="medium"]
+{
+}
+af|panelTabbed::body[theme="dark"],
+af|decorativeBox::center[theme="medium"]
+{
+}
+af|panelTabbed::body-end[theme="dark"],
+af|decorativeBox::end[theme="medium"]
+{
+}
+af|panelTabbed::footer-start[theme="dark"],
+af|decorativeBox::bottom-start[theme="medium"]
+{
+}
+af|panelTabbed::footer-center[theme="dark"],
+af|decorativeBox::bottom[theme="medium"]
+{
+}
+af|panelTabbed::footer-end[theme="dark"],
+af|decorativeBox::bottom-end[theme="medium"]
+{
+}
+
+/* rtl */
+af|panelTabbed::header-start[theme="dark"]:rtl,
+af|decorativeBox::top-start[theme="medium"]:rtl
+{
+}
+af|panelTabbed::header-end[theme="dark"]:rtl,
+af|decorativeBox::top-end[theme="medium"]:rtl
+{
+}
+af|panelTabbed::body-start[theme="dark"]:rtl,
+af|decorativeBox::start[theme="medium"]:rtl
+{
+}
+af|panelTabbed::body-end[theme="dark"]:rtl,
+af|decorativeBox::end[theme="medium"]:rtl
+{
+}
+af|panelTabbed::footer-start[theme="dark"]:rtl,
+af|decorativeBox::bottom-start[theme="medium"]:rtl
+{
+}
+af|panelTabbed::footer-end[theme="dark"]:rtl,
+af|decorativeBox::bottom-end[theme="medium"]:rtl
+{
+}
+
+
+/**
+ * Level 2 (light) tabs.
+ *
+ * Specify the background images for each of the following aliases,
+ * plus a font and color for the tab text.
+ *
+ */
+
+/* level 2 unselected tabs */
+.AFTabAboveStartUnselectedLevel2Background:alias
+{
+}
+.AFTabAboveStartUnselectedLevel2Background:alias:rtl
+{
+}
+.AFTabAboveMiddleUnselectedLevel2Background:alias
+{
+}
+.AFTabAboveEndUnselectedLevel2Background:alias
+{
+}
+.AFTabAboveEndUnselectedLevel2Background:alias:rtl
+{
+}
+af|panelTabbed::tab af|panelTabbed::tab-content[theme="medium"],
+af|panelTabbed::tab af|panelTabbed::tab-text-link[theme="medium"],
+af|navigationPane-tabs::tab af|navigationPane-tabs::tab-link[theme="light"],
+af|navigationPane-tabs::tab af|navigationPane-tabs::tab-content[theme="light"]
+{
+}
+af|panelTabbed::tab:hover af|panelTabbed::tab-content[theme="medium"],
+af|panelTabbed::tab:hover af|panelTabbed::tab-text-link[theme="medium"],
+af|navigationPane-tabs::tab:hover af|navigationPane-tabs::tab-link[theme="light"],
+af|navigationPane-tabs::tab:hover af|navigationPane-tabs::tab-content[theme="light"]
+{
+}
+
+/* level 2 selected tabs */
+.AFTabAboveStartSelectedLevel2Background:alias
+{
+}
+.AFTabAboveStartSelectedLevel2Background:alias:rtl
+{ 
+}
+.AFTabAboveMiddleSelectedLevel2Background:alias
+{
+}
+.AFTabAboveEndSelectedLevel2Background:alias
+{
+}
+.AFTabAboveEndSelectedLevel2Background:alias:rtl
+{ 
+}
+af|panelTabbed::tab:selected af|panelTabbed::tab-content[theme="medium"],
+af|panelTabbed::tab:selected af|panelTabbed::tab-text-link[theme="medium"],
+af|panelTabbed::tab:selected:hover af|panelTabbed::tab-content[theme="medium"],
+af|panelTabbed::tab:selected:hover af|panelTabbed::tab-text-link[theme="medium"],
+af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-content[theme="light"],
+af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-link[theme="light"],
+af|navigationPane-tabs::tab:selected:hover af|navigationPane-tabs::tab-content[theme="light"],
+af|navigationPane-tabs::tab:selected:hover af|navigationPane-tabs::tab-link[theme="light"]
+{
+}
+
+/* level 2 content -- also used for "light" decorativeBoxes */
+af|panelTabbed::header-start[theme="medium"],
+af|decorativeBox::top-start[theme="light"]
+{
+}
+af|panelTabbed::header-center[theme="medium"],
+af|decorativeBox::top[theme="light"]
+{
+}
+af|panelTabbed::header-end[theme="medium"],
+af|decorativeBox::top-end[theme="light"]
+{
+}
+af|panelTabbed::body-start[theme="medium"],
+af|decorativeBox::start[theme="light"]
+{
+}
+af|panelTabbed::body[theme="medium"],
+af|decorativeBox::center[theme="light"]
+{
+}
+af|panelTabbed::body-end[theme="medium"],
+af|decorativeBox::end[theme="light"]
+{
+}
+af|panelTabbed::footer-start[theme="medium"],
+af|decorativeBox::bottom-start[theme="light"]
+{
+}
+af|panelTabbed::footer-center[theme="medium"],
+af|decorativeBox::bottom[theme="light"]
+{
+}
+af|panelTabbed::footer-end[theme="medium"],
+af|decorativeBox::bottom-end[theme="light"]
+{
+}
+
+/* rtl */
+af|panelTabbed::header-start[theme="medium"]:rtl,
+af|decorativeBox::top-start[theme="light"]:rtl
+{
+}
+af|panelTabbed::header-end[theme="medium"]:rtl,
+af|decorativeBox::top-end[theme="light"]:rtl
+{
+}
+af|panelTabbed::body-start[theme="medium"]:rtl,
+af|decorativeBox::start[theme="light"]:rtl
+{
+}
+af|panelTabbed::body-end[theme="medium"]:rtl,
+af|decorativeBox::end[theme="light"]:rtl
+{
+}
+af|panelTabbed::footer-start[theme="medium"]:rtl,
+af|decorativeBox::bottom-start[theme="light"]:rtl
+{
+}
+af|panelTabbed::footer-end[theme="medium"]:rtl,
+af|decorativeBox::bottom-end[theme="light"]:rtl
+{
+}
+
+/*Custom CSS added by Nitish*/
+
+BODY{
+    color:#58595B;
+    background-color:#fff;
+}
+.headerLogo{
+    height: 52px;
+    margin-left: 5px;
+    width: 50px;
+}
+.headerLogoDesc{
+   height: 61px;
+    margin-left: 12px;
+    width: 170px;
+}
+
+.header {
+    padding-left: 100px;
+    padding-right: 100px;    
+}
+.homeHeader{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.homeImage{
+    background-image: url("/images/homeImage.png");   
+    display: block;
+    /*height: 445px;*/
+}
+.headerText2{
+    background-image: url("/images/ht_bkg.png");     
+    background-position: center top;
+    background-repeat: repeat;
+     padding: 15px 165px;
+    color:White;
+    display: block;
+}
+.searchButton{
+    padding: 5px 20px;
+    background-image: none !important;
+    background-color: rgb(61, 181, 61);
+    margin-left: -1px;
+}
+
+.homeSearch{
+   background-image: url("/images/globe_tab-bkg.png");
+    display: block;
+    margin-left: 2px;
+    margin-right: 30px;
+    margin-top: 15px;
+    padding: 15px;
+    text-align: center;
+}
+.homeSearchText input{
+    height:26px;width: 630px; font-size:medium; font-family: openSans;
+}
+
+.companyLinks{
+   background-color: #b9bdc2;
+    padding: 12px;
+    padding-left: 120px;
+    width: 100%; 
+    font-family: openSans;
+}
+.companyLinks a {
+    margin-right: 30px;
+}
+.footer{
+    background-color:#D1D3D6; 
+    padding: 30px 80px 65px 100px;
+    margin-top: -3px;
+    width:100%;
+    
+}
+.displayevents{
+    background-color:#D1D3D6; 
+    padding: 30px 40px 98px 57px;
+    margin-top: -3px;
+    width:50%;
+    border:1px solid;
+    float:left;
+    /*height:200px;*/
+    
+}
+.displayevents1{
+     background-color:#D1D3D6; 
+    padding: 30px 40px 20px 57px;
+    margin-top: -3px;
+    width:50%;
+    border:1px solid;
+    float:right;
+    /*height:313px;*/
+    
+}
+.footerLinks table {
+    margin-right: 50px;
+    font-family: openSans;
+    color: #58595B;
+}
+.footerLinksSeperator{
+    background-color: Gray;
+    display: block;
+    height: 2px !important;
+    margin-left: 0;
+    width: 100%;
+}
+.footerEnd{
+     background-image: url("/images/globe_tab-bkg.png");
+    background-position: center top;
+    background-repeat: repeat-x;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    width: 100%;
+}
+.footerSocialLinks{
+    
+}
+.homeContent{
+    
+}
+.homeContent table {
+     padding: 10px 50px;
+}
+
+.services{
+      padding: 30px 0px 30px  70px;
+      width:250px;
+}
+.services a {
+    display: block;
+    padding: 5px;
+}
+.selectedService{
+    font-weight: bold;
+    background-color: rgb(242,242,242);
+}
+.selectedServiceTitle{
+    font-size:18px;
+    color:#424143;
+    margin-bottom: 12px !important;
+    display: block;
+    padding-left:30px;
+    padding-top:20px;
+}
+.nonSelectedService{
+    font-weight: normal;
+    background-color: none;
+}
+.selectedServiceList{
+    /*margin-left: 60px;*/
+    margin-top: 30px;
+    width:500px;
+    background-color: rgb(242,242,242);
+    padding-bottom: 100px !important;
+}
+.selectedServiceList a {
+    display: block;
+    padding: 5px;
+}
+
+.homeContentTitle{
+    display: block;
+    font-size: 18px;
+    margin-left: 100px;
+    margin-top: 30px;
+    font-family: openSans;
+      font-weight: 600;
+}
+.homeContentKey{
+font-family: openSans;
+    font-weight: bold;
+      color: #58585B;
+  font-size: medium;
+}
+.homeContentValue{
+    font-family: openSans;
+}
+.homeContentLine{
+    border-top: dashed 1px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.homeContentIcon {
+    background-color: #E4E6E8 !important;
+    display: block;
+    padding: 60px 100px 60px 130px;
+    margin-bottom: -5px;
+    /*margin-top: 406px;*/
+    border:1px solid;
+}
+
+.homeContentIcon table{
+    width: 100% !important;
+}
+.homeContentIcon img{
+   height: 205px;
+    width: 200px;
+    margin-bottom: 70px;
+    margin-right: 70px;
+}
+
+.drivingLicenceLeft {
+    /*padding: 5px 15px;*/
+}
+.drivingLicenceLeft button {
+    margin-top: 10px !important;
+    padding: 10px 35px !important;
+}
+
+.drivingLicenceLeft td {
+    padding: 7px !important;
+}
+
+.drivingLicenceLeft span {
+    display: block;
+    padding: 5px 5px;
+}
+.drivingLicenceLeft li {
+    padding: 5px;
+}
+.drivingLicenceLeft button {
+    margin-top: 10px !important;
+    padding: 10px 35px !important;
+}
+.drivingLicenceRight {
+    display: block;
+    padding: 10px !important;
+}
+.drivingLicenceRight a {
+    display: block;
+    padding: 5px !important;
+}
+
+.userMsg{
+    font-weight:bold;
+}
+/*Added by Phaneendra
+Skins for breadcrumbs*/
+af|breadCrumbs::separator
+{
+    color: White;
+    font-weight: bold;
+}
+.breadCrumbs{
+    
+}
+.footerlinks af|commandLink, af|goLink
+{
+  color: #58595B; 
+  font-family: openSans;
+}
+af|commandLink, af|goLink
+{
+  color: #58595B; 
+  font-family: openSans;
+}
+
+af|document
+{  
+  background-color: white; 
+}
+
+af|commandLink:hover-target
+{
+background-color: rgb(229,229,229);
+  text-underline: none;
+    text-decoration: none;
+}
+
+af|commandButton.registerButton{
+    background-color: rgb(61, 181, 61) !important;
+    background-image: none !important;
+    color: white;
+    font-size: 15px;
+    padding: 5px 22px !important;
+    font-family: openSans;
+    border: none ; 
+}
+af|commandButton.registerButton:hover:text-only {
+    background-color: rgb(61, 181, 61) !important;
+    background-image: none !important;
+    color: white;
+    font-size: 15px;
+    padding: 5px 22px !important;
+   font-family: openSans;
+   font-weight: bold;
+   border: none ;
+}
+
+af|commandButton.registerButton:focus:text-only {
+    background-color: rgb(61, 181, 61) !important;
+    background-image: none !important;
+    color: white;
+    font-size: 15px;
+    padding: 5px 22px !important;
+   font-family: openSans;
+   font-weight: bold;
+   border: none ;
+}
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.nav > li {
+  position: relative;
+  display: block;
+}
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+.nav > li.disabled > a {
+  color: #777;
+}
+.nav > li.disabled > a:hover,
+.nav > li.disabled > a:focus {
+  color: #777;
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+  background-color: #red !important;
+  border-color: #337ab7;
+}
+.nav .nav-divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+.nav > li > a > img {
+  max-width: none;
+}
+.nav-tabs {
+  /*border-left: 1px solid #ddd;*/
+}
+.nav-tabs > li {
+  float: left;
+  margin-bottom: -1px;
+}
+.nav-tabs > li > a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+.nav-tabs > a:hover {
+  border-color: # Silver #eee #ddd;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: #555;
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+}
+.nav-tabs.nav-justified {
+  width: 100%;
+  border-bottom: 0;
+}
+.nav-tabs.nav-justified > li {
+  float: none;
+}
+.nav-tabs.nav-justified > li > a {
+  margin-bottom: 5px;
+  text-align: center;
+}
+.nav-tabs.nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+@media (min-width: 768px) {
+  .nav-tabs.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  .nav-tabs.nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
+.nav-tabs.nav-justified > li > a {
+  margin-right: 0;
+  border-radius: 4px;
+}
+.nav-tabs.nav-justified > .active > a,
+.nav-tabs.nav-justified > .active > a:hover,
+.nav-tabs.nav-justified > .active > a:focus {
+  border: 1px solid #ddd;
+}
+@media (min-width: 768px) {
+  .nav-tabs.nav-justified > li > a {
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+  }
+  .nav-tabs.nav-justified > .active > a,
+  .nav-tabs.nav-justified > .active > a:hover,
+  .nav-tabs.nav-justified > .active > a:focus {
+    border-bottom-color: #fff;
+  }
+}
+af|outputText {
+    font-family:openSans;
+}
+.eventstyledisplay {
+    border:1px solid;
+}
+.hudumaevents {
+    padding-top:10px;
+}
+

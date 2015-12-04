@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:pe="http://xmlns.oracle.com/adf/pageeditor"
+          xmlns:cust="http://xmlns.oracle.com/adf/faces/customizable"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <f:loadBundle basename="oracle.webcenter.portalframework.sitestructure.resource.PortalAppPageResource"
+                var="portalResource"/>
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1" title="Home">
+      <af:form id="f1">
+        <af:pageTemplate value="#{bindings.pageTemplateBinding.templateModel}"
+                         id="pt1">
+          <f:facet name="content">
+            <pe:pageCustomizable id="hm_pgc1">
+              <cust:panelCustomizable id="hm_pnc1" layout="scroll">
+                <af:panelGroupLayout id="pt_pgeventsl15" layout="vertical" inlineStyle="padding-bottom:116px;">
+                  <af:separator id="pt_sev10"
+                                inlineStyle=" background-color: #424143;display: block;height: 8px ;"/>
+                  <af:panelGroupLayout id="pt_pgevents" layout="horizontal"
+                                       halign="center" valign="top"
+                                       styleClass="displayevents" inlineStyle="padding-bottom:116px;">
+                    <!-- Display Life Events -->
+                    <div style="margin-top:-20px;position:absolute;margin-left:28px;font-weight:bold;font-size:15px;">
+                      Live Events
+                    </div>
+                    <af:panelGroupLayout id="pgl1" valign="top"
+                                         layout="horizontal">
+                      <af:panelGroupLayout id="pgl2" styleClass="hudumaevents"
+                                           layout="vertical">
+                        <af:panelFormLayout id="pfl1" maxColumns="2" rows="10"
+                                            styleClass="footerlinks1">
+                          <f:facet name="footer"/>
+                          <af:forEach var="node" varStatus="vs"
+                                      items="#{navigationContext.defaultNavigationModel.listModel['startNode=services, includeStartNode=false']}">
+                            <af:commandLink id="commandLink23"
+                                            text="#{node.title}"
+                                            inlineStyle="font-size:small;#{node.selected ? 'font-weight:bold;' : ''};"
+                                            action="pprnav"
+                                            disabled="#{not node.navigable}"
+                                            actionListener="#{navigationContext.processAction}"
+                                            clientComponent="#{node.attributes['Target'] == '_popup' ? true : false}">
+                              <!-- pass node to processAction for setting current selection and navigation  -->
+                              <f:attribute name="node" value="#{node}"/>
+                              <c:if test="${node.attributes['Target'] == '_popup'}">
+                                <af:clientAttribute name="modelPath"
+                                                    value="#{node.navigationModel.metadataId}"/>
+                                <af:clientAttribute name="selectedPrettyUrl"
+                                                    value="#{node.prettyUrl}"/>
+                                <af:clientAttribute name="selectedTitle"
+                                                    value="#{node.title}"/>
+                              </c:if>
+                              <af:setPropertyListener from="#{node.children}"
+                                                      to="#{sessionScope.scopeNode}"
+                                                      type="action"/>
+                              <af:setPropertyListener from="#{node.title}"
+                                                      to="#{sessionScope.scopeNodeTitle}"
+                                                      type="action"/>
+                              <af:setPropertyListener from="#{node.parent.id}"
+                                                to="#{sessionScope.scopeNodeId}"
+                                                type="action"/>
+                            </af:commandLink>
+                          </af:forEach>
+                        </af:panelFormLayout>
+                      </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                  <af:panelGroupLayout id="pt_pgmevents" layout="horizontal"
+                                       halign="center" valign="top"
+                                       styleClass="displayevents1">
+                    <!-- Display Ministry Events -->
+                    <div style="margin-top:-20px;position:absolute;margin-left:28px;font-weight:bold;font-size:15px;">
+                      Services By Ministry
+                    </div>
+                    <af:panelGroupLayout id="pgl4" valign="top"
+                                         layout="horizontal">
+                      <af:panelGroupLayout id="pgl5" styleClass="hudumaevents"
+                                           layout="vertical">
+                        <af:panelFormLayout id="pfl3" maxColumns="2" rows="10"
+                                            styleClass="footerlinks1">
+                          <f:facet name="footer"/>
+                          <af:forEach var="node" varStatus="vs"
+                                      items="#{navigationContext.defaultNavigationModel.listModel['startNode=servicesByMinistry, includeStartNode=false']}">
+                            <af:commandLink id="cl7"
+                                            text="#{node.title}"
+                                            inlineStyle="font-size:small;color:#58595B;#{node.selected ? 'font-weight:bold;' : ''};"
+                                            action="pprnav"
+                                            disabled="#{not node.navigable}"
+                                            actionListener="#{navigationContext.processAction}"
+                                            clientComponent="#{node.attributes['Target'] == '_popup' ? true : false}">
+                              <!-- pass node to processAction for setting current selection and navigation  -->
+                              <f:attribute name="node" value="#{node}"/>
+                              <c:if test="${node.attributes['Target'] == '_popup'}">
+                                <af:clientAttribute name="modelPath"
+                                                    value="#{node.navigationModel.metadataId}"/>
+                                <af:clientAttribute name="selectedPrettyUrl"
+                                                    value="#{node.prettyUrl}"/>
+                                <af:clientAttribute name="selectedTitle"
+                                                    value="#{node.title}"/>
+                              </c:if>
+                              <af:setPropertyListener from="#{node.children}"
+                                                      to="#{sessionScope.scopeNode}"
+                                                      type="action"/>
+                              <af:setPropertyListener from="#{node.title}"
+                                                      to="#{sessionScope.scopeNodeTitle}"
+                                                      type="action"/>
+                             <af:setPropertyListener from="#{node.parent.id}"
+                                                to="#{sessionScope.scopeNodeId}"
+                                                type="action"/>  
+                            </af:commandLink>
+                          </af:forEach>
+                        </af:panelFormLayout>
+                      </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout id="pt_pgeventsl16" layout="vertical">
+                  <div style="border: 1px solid; background-color: rgb(228, 230, 232) ! important; text-align: center; float: left; margin-top: 5px; width: 987px;font-size:18px;font-weight:bold; height:60px;">
+                    Popular Searches
+                  </div>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout id="pgl3" halign="center"
+                                     styleClass="homeContentIcon">
+                  <af:panelFormLayout id="pfl2" rows="2" maxColumns="3">
+                    <af:commandLink id="cl1" action="pprnav"
+                                    actionListener="#{navigationContext.processAction}">
+                      <af:image id="i3" source="/images/content/marriage.jpg"/>
+                      <f:attribute name="node"
+                             value="#{navigationContext.defaultNavigationModel.node['services/marriages']}"/>
+                      <af:setPropertyListener from="#{'services'}"
+                                              to="#{sessionScope.scopeNodeId}"
+                                              type="action"/>
+                         <af:setPropertyListener from="#{navigationContext.currentNavigationModel.currentSelection}"
+                                              to="#{sessionScope.scopeNode}"
+                                              type="action"/>
+                         <af:setPropertyListener from="#{'Marriages'}"
+                                              to="#{sessionScope.scopeNodeTitle}"
+                                              type="action"/>                     
+                    </af:commandLink>
+                    <af:commandLink id="cl5" action="pprnav"
+                                    actionListener="#{navigationContext.processAction}">
+                      <af:image id="i4" source="/images/content/births.jpg"/>
+                      <f:attribute name="node"
+                             value="#{navigationContext.defaultNavigationModel.node['services/births']}"/>
+                      <af:setPropertyListener from="#{'services'}"
+                                              to="#{sessionScope.scopeNodeId}"
+                                              type="action"/>
+                         <af:setPropertyListener from="#{navigationContext.currentNavigationModel.currentSelection.children}"
+                                              to="#{sessionScope.scopeNode}"
+                                              type="action"/>
+                         <af:setPropertyListener from="#{'Births'}"
+                                              to="#{sessionScope.scopeNodeTitle}"
+                                              type="action"/>       
+                    </af:commandLink>
+                       <af:commandLink id="cl3" action="pprnav"
+                                    actionListener="#{navigationContext.processAction}">
+                      <af:image id="i1" source="/images/content/taxes.jpg"/>
+                      <f:attribute name="node"
+                             value="#{navigationContext.defaultNavigationModel.node['services/moneyAndTaxes']}"/>
+                      <af:setPropertyListener from="#{'services'}"
+                                              to="#{sessionScope.scopeNodeId}"
+                                              type="action"/>
+                         <af:setPropertyListener from="#{navigationContext.currentNavigationModel.currentSelection}"
+                                              to="#{sessionScope.scopeNode}"
+                                              type="action"/>
+                         <af:setPropertyListener from="#{'Money and Taxes'}"
+                                              to="#{sessionScope.scopeNodeTitle}"
+                                              type="action"/>     
+                    </af:commandLink>
+                    <af:commandLink id="cl6" action="pprnav"
+                                    actionListener="#{navigationContext.processAction}">
+                      <af:image id="i5" source="/images/content/court.jpg"/>
+                      <f:attribute name="node"
+                             value="#{navigationContext.defaultNavigationModel.node['services/moneyAndTaxes']}"/>
+                      <af:setPropertyListener from="#{'services'}"
+                                              to="#{sessionScope.scopeNodeId}"
+                                              type="action"/>
+                         <af:setPropertyListener from="#{navigationContext.currentNavigationModel.currentSelection}"
+                                              to="#{sessionScope.scopeNode}"
+                                              type="action"/>
+                         <af:setPropertyListener from="#{'Money and Taxes'}"
+                                              to="#{sessionScope.scopeNodeTitle}"
+                                              type="action"/>
+                    </af:commandLink>
+                    <af:commandLink id="cl4" action="pprnav"
+                                    actionListener="#{navigationContext.processAction}">
+                      <af:image id="i2" source="/images/content/business.jpg"/>
+                      <f:attribute name="node"
+                             value="#{navigationContext.defaultNavigationModel.node['services/businessAndTrade']}"/>
+                      <af:setPropertyListener from="#{'services'}"
+                                              to="#{sessionScope.scopeNodeId}"
+                                              type="action"/>
+                         <af:setPropertyListener from="#{navigationContext.currentNavigationModel.currentSelection}"
+                                              to="#{sessionScope.scopeNode}"
+                                              type="action"/>
+                         <af:setPropertyListener from="#{'Business and Trade'}"
+                                              to="#{sessionScope.scopeNodeTitle}"
+                                              type="action"/>
+                    </af:commandLink>
+                    <af:commandLink id="cl8" action="pprnav"
+                                    actionListener="#{navigationContext.processAction}">
+                      <af:image id="i6" source="/images/content/land.jpg"/>
+                      <f:attribute name="node"
+                             value="#{navigationContext.defaultNavigationModel.node['services/housingAndLand']}"/>
+                      <af:setPropertyListener from="#{'services'}"
+                                              to="#{sessionScope.scopeNodeId}"
+                                              type="action"/>
+                         <af:setPropertyListener from="#{navigationContext.currentNavigationModel.currentSelection}"
+                                              to="#{sessionScope.scopeNode}"
+                                              type="action"/>
+                         <af:setPropertyListener from="#{'Housing and Land'}"
+                                              to="#{sessionScope.scopeNodeTitle}"
+                                              type="action"/>
+                    </af:commandLink>
+                  </af:panelFormLayout>
+                </af:panelGroupLayout>
+              </cust:panelCustomizable>
+              <f:facet name="editor">
+                <pe:pageEditorPanel id="pep1"/>
+              </f:facet>
+            </pe:pageCustomizable>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

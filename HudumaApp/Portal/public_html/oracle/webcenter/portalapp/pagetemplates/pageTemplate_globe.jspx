@@ -1,0 +1,480 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:pe="http://xmlns.oracle.com/adf/pageeditor"
+          xmlns:cust="http://xmlns.oracle.com/adf/faces/customizable"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:loadBundle basename="oracle.webcenter.portalframework.sitestructure.resource.PortalAppPageResource"
+                var="portalResource"/>
+  <af:pageTemplateDef var="attrs">
+    <af:panelGroupLayout id="pt_root" layout="scroll">
+      <!-- centered vertical stack: banner, navbar, content, footer -->
+      <af:panelGroupLayout id="pt_pgl2" layout="vertical" inlineStyle="width:#{attrs.contentWidth};margin: 0 auto;">
+        <!-- (1) banner, overall layout -->
+        <af:panelGroupLayout id="pt_pgl10"
+                             styleClass="#{navigationContext.currentNavigationModel.currentSelection.title eq 'Home' ? 'homeImage' : ''}">
+          <af:panelBorderLayout id="pt_pgl1"
+                                rendered="#{!composerContext.inEditMode or attrs.isEditingTemplate}" inlineStyle="padding-left: 100px;
+    padding-right: 100px;" styleClass="header">
+            <!-- (2)-1 logo (Custom Text, Tag Line) -->
+            <af:panelGroupLayout layout="horizontal"
+                                 inlineStyle="background-color:white;margin-top:-20px;"
+                                 styleClass="AFStretchWidth" id="pt_pgl8">
+              <cust:panelCustomizable id="pt_pc2" layout="horizontal"
+                                      inlineStyle="border-style:none;">
+                <af:panelGroupLayout id="pt_pgl4" layout="vertical">
+                  <af:spacer id="pt_sp1" height="12px"/>
+                  <af:commandLink id="commandLink1" action="goHome">
+                    <!-- <af:goLink id="pt_ot4" destination="/"
+                               inlineStyle="font-size:x-large; ">-->
+                    <af:panelGroupLayout id="pt_pgl20" layout="horizontal">
+                      <af:image source="/images/logo.png" id="pt_i1"
+                                styleClass="headerLogo" rendered="true"/>
+                      <af:image source="/images/logoDesc.png" id="pt_i4"
+                                styleClass="headerLogoDesc" rendered="true"/>
+                    </af:panelGroupLayout>
+                    <!-- </af:goLink>-->
+                    <af:setPropertyListener from="Home"
+                                            to="#{pageFlowScope.mbean.selectedPage}"
+                                            type="action"/>
+                  </af:commandLink>
+                </af:panelGroupLayout>
+              </cust:panelCustomizable>
+              <!-- (2)-2 global links (Welcome Message, Administration Link, Login/Logout -->
+              <af:panelGroupLayout id="pt_pgl9">
+                <cust:panelCustomizable layout="vertical" id="pt_pgl16"
+                                        halign="end"
+                                        inlineStyle="padding:6px 8px"
+                                        rendered="#{!registrationNode.selected}">
+                  <!-- Global links -->
+                  <af:panelGroupLayout id="pt_pgl11"
+                                       inlineStyle="white-space:nowrap">
+                    <f:facet name="separator">
+                      <af:panelGroupLayout id="pt_pgl17">
+                        <af:spacer id="pt_spb" width="5px"/>
+                        <af:outputText value="|" id="pt_bar1"/>
+                        <af:spacer id="pt_spa" width="5px"/>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                    <af:panelGroupLayout id="pt_pgl6" layout="horizontal">
+                      <af:panelGroupLayout id="pt_pgl5">
+                        <!-- 1) Username -->
+                        <af:outputText id="pt_ot1"
+                                       value="#{securityContext.userName}"
+                                       inlineStyle="font-size:small;"
+                                       rendered="#{attrs.showGreetings}"/>
+                        <af:spacer height="10px" id="pt_s5"/>
+                        <!-- 2a) Admin link -->
+                        <!--<af:goLink id="pt_glnk1" text="#{portalResource['admin']}"
+                           destination="/admin"
+                           rendered="#{attrs.showAdmin and !attrs.isAdminPage}"
+                           inlineStyle="font-size:small;  "/>-->
+                        <af:commandLink text="My Profile" action="goUserProfile"
+                                        rendered="#{attrs.showAdmin and !attrs.isAdminPage}"
+                                        inlineStyle="font-size:small;  "
+                                        id="commandLink2">
+                          <af:setPropertyListener from="My Profile"
+                                                  to="#{pageFlowScope.mbean.selectedService}"
+                                                  type="action"/>
+                          <af:setPropertyListener from="myprofile"
+                                                  to="#{pageFlowScope.mbean.selectedPage}"
+                                                  type="action"/>
+                        </af:commandLink>
+                        <!--<af:goLink id="pt_glnk1"
+                                   text="#{hudumaResource.myProfile}"
+                                   destination="/oracle/webcenter/pages/userProfile.jspx"
+                                   
+                                   inlineStyle="font-size:small;  "/>-->
+                        <!-- 2b) Back to Portal link -->
+                        <af:goLink id="pt_glnk2"
+                                   text="#{portalResource['back']}"
+                                   destination="/faces/wcnav_currentSelection"
+                                   rendered="#{attrs.showAdmin and attrs.isAdminPage}"
+                                   inlineStyle="font-size:small;  "/>
+                        <!--Spacer-->
+                        <af:spacer id="pt_s1" width="5px"
+                                   rendered="#{securityContext.authenticated}"/>
+                        <af:outputText value="|" id="pt_ot2"
+                                       rendered="#{securityContext.authenticated}"/>
+                        <af:spacer id="pt_s4" width="5px"
+                                   rendered="#{securityContext.authenticated}"/>
+                        <!-- 3) Logout link -->
+                        <af:commandLink id="pt_glnk4" text="Sign out"
+                                        action="#{o_w_s_l_LoginBackingBean.doLogout}"
+                                        rendered="#{securityContext.authenticated}"
+                                        inlineStyle="font-size:small;">
+                        </af:commandLink>
+                        <f:verbatim>
+                          <br/>
+                        </f:verbatim>
+                      </af:panelGroupLayout>
+                      <af:image source="/images/user.png" id="pt_i2"
+                                rendered="#{securityContext.authenticated}"
+                                inlineStyle="width:45px;height:50px;margin-left:20px;"/>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                  <!-- Login form -->
+                  <af:subform id="pt_sf1" defaultCommand="pt_logincb"
+                              rendered="#{attrs.showLogin and !securityContext.authenticated}">
+                    <af:panelFormLayout id="pt_pfl1">
+                      <af:panelLabelAndMessage id="pt_plam1"
+                                               label="#{portalResource['username']}"
+                                               for="pt_it1"
+                                               styleClass="NoLabelWrap"
+                                               labelStyle="font-size:small;">
+                        <af:inputText id="pt_it1" simple="true"
+                                      value="#{o_w_s_l_LoginBackingBean.userName}"
+                                      columns="15"/>
+                      </af:panelLabelAndMessage>
+                      <af:panelLabelAndMessage id="pt_plam2"
+                                               label="#{portalResource['password']}"
+                                               for="pt_it2"
+                                               styleClass="NoLabelWrap"
+                                               labelStyle="font-size:small;">
+                        <af:inputText id="pt_it2" simple="true"
+                                      value="#{o_w_s_l_LoginBackingBean.password}"
+                                      columns="15" secret="true"/>
+                      </af:panelLabelAndMessage>
+                    </af:panelFormLayout>
+                    <af:spacer width="3" height="3" id="pt_s2"/>
+                    <af:panelGroupLayout id="pt_pgl14" layout="horizontal"
+                                         halign="end">
+                      <af:commandLink id="pt_logincb" text="Sign In"
+                                      action="#{o_w_s_l_LoginBackingBean.doLogin}"
+                                      inlineStyle="font-size:small; margin-left: -40px;"/>
+                      <af:spacer id="pt_s3" width="5px"/>
+                    </af:panelGroupLayout>
+                  </af:subform>
+                </cust:panelCustomizable>
+              </af:panelGroupLayout>
+            </af:panelGroupLayout>
+            <!-- (2)-2 global links (Welcome Message, Administration Link, Login/Logout -->
+            <af:panelGroupLayout id="panelGroupLayout2" styleClass="homeHeader"
+                                 rendered="#{navigationContext.currentNavigationModel.currentSelection.title eq 'Home'}">
+              <p style="color:White; font-family:Verdana; font-size:x-large;  margin-left: 15px;">
+                <!--<af:outputText value="#{hudumaResource.homeHeaderText1}"
+                             id="pt_ot3"
+                             inlineStyle="color:white;font-size: 30px;"/>-->
+                You can now access<br/>
+                 
+                <strong>government services </strong>
+                 
+                <br/>and 
+                <strong>&amp;nbsp;information&amp;nbsp; </strong>
+                 online.
+              </p>
+              <br/>
+              <c:set value="#{navigationContext.defaultNavigationModel.listModel['startNode=pages_home/userRegistration, includeStartNode=true'][0]}"
+                     scope="page" var="registrationNode"/>
+              <af:commandButton text="Register Today"
+                                rendered="#{!securityContext.authenticated}"
+                                styleClass="registerButton" id="pt_cb1"
+                                action="goRegister">
+                <af:setPropertyListener from="Registration"
+                                        to="#{pageFlowScope.mbean.selectedPage}"
+                                        type="action"/>
+              </af:commandButton>
+              <!--<af:commandButton id="pt_cb1" text="#{hudumaResource.registerToday}"                                    
+                                    action="pprnav" rendered="#{!(securityContext.authenticated || registrationNode.selected)}"
+                                    styleClass="registerButton" disabled="#{not registrationNode.navigable}"
+                                actionListener="#{navigationContext.processAction}">
+                      -->
+              <!-- pass node to processAction for setting current selection and navigation  -->
+              <!--
+                      <f:attribute name="node" value="#{registrationNode}"/>
+                       <af:setPropertyListener from="register"
+                                            to="#{pageFlowScope.mbean.selectedPage}"
+                                            type="action"/>
+                      </af:commandButton>-->
+              <!--Search text-->
+              <af:panelGroupLayout id="pt_pgl28" styleClass="homeSearch">
+                <af:panelGroupLayout id="panelGroupLayout4" valign="middle"
+                                     halign="center" layout="horizontal"
+                                     inlineStyle="width:655px;padding-top:10px;">
+                  <af:inputText id="pt_it3" styleClass="homeSearchText"
+                                placeholder="I want to...."
+                                inlineStyle="width:645px !important;"/>
+                  <af:commandButton id="pt_cb2" icon="/images/magnify_glass.png"
+                                    styleClass="searchButton"/>
+                </af:panelGroupLayout>
+                <af:outputText value="POPULAR SEARCHES: Renew Driving Licence, Apply For ID, Register My Business"
+                               id="pt_ot9"
+                               inlineStyle="color: #b9bdc2; font-family: openSans;"/>
+              </af:panelGroupLayout>
+              <af:spacer height="20" id="spacer2"/>
+              <af:spacer id="sp1" height="20px"/>
+              <!--<af:breadCrumbs id="bc1" var="node"
+                              value="#{navigationContext.currentNavigationModel.menuModel['includeStartNode=false']}">
+                <f:facet name="nodeStamp">
+                  <af:commandNavigationItem id="cil1" text="#{node.title}"
+                                            actionListener="#{navigationContext.processAction}"
+                                            action="pprnav" immediate="true"
+                                            rendered="#{registrationNode.selected}"
+                                            disabled="#{not node.navigable}"
+                                            inlineStyle="font-size:x-small;#{node.selected ? 'color:Silver;' : 'color:White;font-weight:bold'}">
+                    <f:attribute name="node" value="#{node}"/>
+                  </af:commandNavigationItem>
+                </f:facet>
+              </af:breadCrumbs>-->
+              <af:spacer id="sp2" height="20px"/>
+            </af:panelGroupLayout>
+          </af:panelBorderLayout>
+        </af:panelGroupLayout>
+        <!-- (3) navbar (Home node, Page Hierarchy Nodes, Sub-level Nodes etc -->
+        <cust:panelCustomizable id="pt_pc4"
+                                inlineStyle="background-image:url(#{facesContext.externalContext.requestContextPath}/images/globe_tab-bkg.png);background-position:center top;background-repeat:repeat-x;padding-top:2px;"
+                                rendered="#{!composerContext.inEditMode and attrs.showNavigation and !attrs.isEditingTemplate}">
+         <af:panelGroupLayout id="pt_pg18" layout="horizontal" valign="top"
+                             styleClass="breadCrumbs"
+                             inlineStyle="padding:5.0px;"
+                              rendered="#{navigationContext.currentNavigationModel.currentSelection.title ne 'Home' or navigationContext.currentNavigationModel.currentSelection.title eq '' and navigationContext.currentNavigationModel.currentSelection.title or null}">
+                             <af:commandLink action="pprnav" text="Home"
+                           actionListener="#{navigationContext.processAction}"
+                           id="cl2" inlineStyle="color:White;">
+      <f:attribute name="node"
+                             value="#{navigationContext.defaultNavigationModel.node['home']}"/>
+    </af:commandLink>
+          <af:spacer width="3" height="10" id="pt_s8"/>
+          <af:outputText value=">" id="pt_ot3"
+                         inlineStyle="width:1em;color:white;margin-left:5px;margin-right:5px;"/>
+          <af:panelGroupLayout id="pt_pgl7" layout="horizontal" valign="top"
+                             rendered="#{navigationContext.currentNavigationModel.currentSelection.title ne 'Home'}"
+                             halign="left" styleClass="breadCrumbs">
+          <af:breadCrumbs id="bc1" var="node" varStatus="vs"
+                          value="#{navigationContext.currentNavigationModel.menuModel['startNode=/, includeStartNode=false']}">
+            <f:facet name="nodeStamp">
+             <af:commandNavigationItem id="pt_cni1" text="#{node.title}"
+                                        actionListener="#{navigationContext.processAction}"
+                                        action="pprnav" partialSubmit="true"
+                                        disabled="true"
+                                       inlineStyle="color:White;">
+                <f:attribute name="node"
+                             value="#{navigationContext.defaultNavigationModel.node[sessionScope.scopeNodeId]}"/>
+              </af:commandNavigationItem>
+            </f:facet>
+          </af:breadCrumbs>
+        </af:panelGroupLayout>
+        </af:panelGroupLayout>
+        </cust:panelCustomizable>
+        <af:popup id="rendererPopup" contentDelivery="lazyUncached"
+                  launcherVar="source" eventContext="launcher">
+          <af:setPropertyListener from="#{source.attributes.modelPath}"
+                                  to="#{viewScope.modelPath}"
+                                  type="popupFetch"/>
+          <af:setPropertyListener from="#{source.attributes.selectedPrettyUrl}"
+                                  to="#{viewScope.selectedPrettyUrl}"
+                                  type="popupFetch"/>
+          <af:setPropertyListener from="#{source.attributes.selectedTitle}"
+                                  to="#{viewScope.selectedTitle}"
+                                  type="popupFetch"/>
+          <af:dialog id="pt_d1" title="#{viewScope.selectedTitle}" type="cancel"
+                     cancelTextAndAccessKey="Close">
+            <af:region value="#{bindings.navigationrenderer1.regionModel}"
+                       id="pt_r1"/>
+          </af:dialog>
+        </af:popup>
+        <af:panelGroupLayout id="pt_pgl3" styleClass="headerText2" rendered="#{navigationContext.currentNavigationModel.currentSelection.title eq 'Home'}">
+          <!--<af:outputText value="#{hudumaResource.homeHeaderText2}" id="pt_ot6"/>-->
+          <p style="color:White; font-family:openSans; font-size:small; text-align: justify;">
+          
+          Huduma Kenya is a programme by the Government of Kenya that aims to transform Public Service Delivery by providing citizens access to various Public Services and information from One Stop Shop citizen service centres called Huduma Centres and through integrated. technology platforms.
+          </p>
+                </af:panelGroupLayout>
+        <!-- (4) content -->
+        <af:facetRef facetName="content"/>
+        <!-- (5) footer -->
+        <af:panelGroupLayout id="pt_pgl15" layout="vertical" rendered="false">
+          <af:spacer id="pt_sp8" height="3px"/>
+          <af:outputText id="pt_ot5"
+                         value="#{portalResource['copyright']}"/>
+        </af:panelGroupLayout>
+        <af:panelGroupLayout id="panelGroupLayout1" layout="vertical"
+                             rendered="#{!composerContext.inEditMode or facesContext.viewRoot.viewId == '/oracle/webcenter/siteresources/scopedMD/s8bba98ff_4cbb_40b8_beee_296c916a23ed/siteTemplate/gsr395559d2_16dc_4c21_89f8_f62c184d3bbc/Container.jspx'}"
+                             inlineStyle="width:#{attrs.contentWidth};margin: 0 auto;">
+          <!--footer links-->
+          <af:separator id="pt_s10"
+                        inlineStyle=" background-color: #424143;display: block;height: 8px ;"/>
+          <af:panelGroupLayout id="pt_pgl21" layout="horizontal" halign="center"
+                               valign="top" styleClass="footer">
+            <!--Services links-->
+            <af:panelGroupLayout id="pt_pgl22" layout="horizontal" valign="top">
+              <af:image source="/images/logo.png" id="pt_i5"
+                        styleClass="headerLogo" rendered="true"/>
+              <af:spacer width="15" id="pt_s11"/>
+              <af:panelGroupLayout id="pt_pgl24">
+                <af:outputText value="Services" id="pt_ot7"
+                               inlineStyle="font-family: openSans; font-weight:500; font-size: medium;"/>
+                <af:separator id="pt_s28" styleClass="footerLinksSeperator"/>
+                <af:panelGroupLayout id="pt_pgl25" layout="horizontal"
+                                     valign="top">
+                  <af:panelFormLayout id="pt_pfl2" rows="6" maxColumns="2"
+                                      styleClass="footerlinks" fieldWidth="100"
+                                      inlineStyle="white-space:noWrap;">
+                    <af:forEach var="node" varStatus="vs"
+                                items="#{navigationContext.defaultNavigationModel.listModel['startNode=services, includeStartNode=false']}">
+                      <af:subform id="subform1">
+                            <af:commandLink id="commandLink3"
+                                            text="#{node.title}"
+                                            inlineStyle="font-size:small;#{node.selected ? 'font-weight:bold;' : ''}"
+                                            action="pprnav"
+                                            disabled="#{not node.navigable}"
+                                            actionListener="#{navigationContext.processAction}"
+                                            clientComponent="#{node.attributes['Target'] == '_popup' ? true : false}">
+                              <!-- pass node to processAction for setting current selection and navigation  -->
+                              <f:attribute name="node" value="#{node}"/>
+                              <c:if test="${node.attributes['Target'] == '_popup'}">
+                                <af:clientAttribute name="modelPath"
+                                                    value="#{node.navigationModel.metadataId}"/>
+                                <af:clientAttribute name="selectedPrettyUrl"
+                                                    value="#{node.prettyUrl}"/>
+                                <af:clientAttribute name="selectedTitle"
+                                                    value="#{node.title}"/>
+                              </c:if>
+                           <af:setPropertyListener from="#{node.children}"
+                          to="#{sessionScope.scopeNode}" type="action"/>
+                          <af:setPropertyListener from="#{node.title}"
+                                                to="#{sessionScope.scopeNodeTitle}"
+                                                type="action"/>
+                         <af:setPropertyListener from="#{node.parent.id}"
+                                                to="#{sessionScope.scopeNodeId}"
+                                                type="action"/>
+                        </af:commandLink>
+                        <af:spacer id="spacer1" width="20"
+                                   rendered="#{! vs.last}"/>
+                      </af:subform>
+                    </af:forEach>
+                  </af:panelFormLayout>
+                </af:panelGroupLayout>
+              </af:panelGroupLayout>
+            </af:panelGroupLayout>
+            <af:spacer width="10" height="10" id="pt_s6"
+                       inlineStyle="height:180px;"/>
+            <!--Government links-->
+            <af:panelGroupLayout id="pt_pgl23" layout="horizontal" valign="top"
+                                 inlineStyle="color:#58595B; ">
+              <af:image source="/images/govLogo.PNG" id="pt_i3"
+                        styleClass="headerLogo"/>
+              <af:spacer width="15" id="pt_s12"/>
+              <af:panelGroupLayout id="pt_pgl26">
+                <af:outputText value="Governement" id="pt_ot8"
+                               inlineStyle="font-family: openSans; font-weight:500;font-size:medium; color:#58595B;"/>
+                <af:separator id="pt_s9" styleClass="footerLinksSeperator"/>
+                <af:panelGroupLayout id="panelGroupLayout3" layout="horizontal"
+                                     valign="top">
+                  <af:panelFormLayout id="panelFormLayout1" rows="6"
+                                      maxColumns="2" styleClass="footerlinks">
+                    <af:forEach var="node" varStatus="vs"
+                                items="#{navigationContext.defaultNavigationModel.listModel['startNode=government, includeStartNode=false']}">
+                      <af:subform id="subform2">
+                            <af:commandLink id="commandLink5"
+                                            text="#{node.title}"
+                                            inlineStyle="font-size:small;#{node.selected ? 'font-weight:bold;' : ''}"
+                                            action="pprnav"
+                                            disabled="#{not node.navigable}"
+                                            actionListener="#{navigationContext.processAction}"
+                                            clientComponent="#{node.attributes['Target'] == '_popup' ? true : false}">
+                              <!-- pass node to processAction for setting current selection and navigation  -->
+                              <f:attribute name="node" value="#{node}"/>
+                              <c:if test="${node.attributes['Target'] == '_popup'}">
+                                <af:clientAttribute name="modelPath"
+                                                    value="#{node.navigationModel.metadataId}"/>
+                                <af:clientAttribute name="selectedPrettyUrl"
+                                                    value="#{node.prettyUrl}"/>
+                                <af:clientAttribute name="selectedTitle"
+                                                    value="#{node.title}"/>
+                              </c:if>
+                                    <af:setPropertyListener from="#{node.children}"
+                          to="#{sessionScope.scopeNode}" type="action"/>
+                          <af:setPropertyListener from="#{node.title}"
+                                                to="#{sessionScope.scopeNodeTitle}"
+                                                type="action"/>
+                         <af:setPropertyListener from="#{node.parent.id}"
+                                                to="#{sessionScope.scopeNodeId}"
+                                                type="action"/>
+                            </af:commandLink>
+                        <af:spacer id="spacer3" width="20"
+                                   rendered="#{! vs.last}"/>
+                      </af:subform>
+                    </af:forEach>
+                  </af:panelFormLayout>
+                </af:panelGroupLayout>
+              </af:panelGroupLayout>
+            </af:panelGroupLayout>
+          </af:panelGroupLayout>
+          <!--Company links-->
+          <af:panelGroupLayout id="pt_pgl18" layout="horizontal"
+                               styleClass="companyLinks">
+            <af:panelGroupLayout id="pt_pgl12" layout="horizontal">
+              <af:goLink text="About Huduma" id="pt_gl3"
+                         inlineStyle="color:#58595B;"/>
+              <af:goLink text="Huduma Centres" id="pt_gl4"
+                         inlineStyle="color:#58595B;"/>
+              <af:goLink text="Huduma Contacts" id="pt_gl5"
+                         inlineStyle="color:#58595B;"/>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pt_pgl19" layout="horizontal"
+                                 halign="end"/>
+            <af:image source="/images/facebook.png" id="pt_i8"
+                      inlineStyle="float:right;"/>
+            <af:image source="/images/twitter.png" id="pt_i9"
+                      inlineStyle="margin-top:2px;"/>
+          </af:panelGroupLayout>
+          <!--copy right-->
+          <af:panelGroupLayout id="pt_pgl13" layout="horizontal"
+                               styleClass="footerEnd"
+                               inlineStyle="font-family:openSans;">
+            <af:outputText id="outputText1" value="© 2015 Huduma Kenya"/>
+            <af:goLink text="Privacy Policy Statement" id="goLink1"
+                       inlineStyle="color:white;"/>
+          </af:panelGroupLayout>
+        </af:panelGroupLayout>
+      </af:panelGroupLayout>
+    </af:panelGroupLayout>
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>Globe Page Template</display-name>
+        <facet>
+          <description>Facet for content</description>
+          <facet-name>content</facet-name>
+        </facet>
+        <attribute>
+          <attribute-name>contentWidth</attribute-name>
+          <attribute-class>java.lang.String</attribute-class>
+          <default-value>1001px</default-value>
+        </attribute>
+        <attribute>
+          <attribute-name>showNavigation</attribute-name>
+          <attribute-class>java.lang.Boolean</attribute-class>
+          <default-value>#{true}</default-value>
+        </attribute>
+        <attribute>
+          <attribute-name>showGreetings</attribute-name>
+          <attribute-class>java.lang.Boolean</attribute-class>
+          <default-value>#{securityContext.authenticated}</default-value>
+        </attribute>
+        <attribute>
+          <attribute-name>showLogin</attribute-name>
+          <attribute-class>java.lang.Boolean</attribute-class>
+          <default-value>#{true}</default-value>
+        </attribute>
+        <attribute>
+          <attribute-name>showAdmin</attribute-name>
+          <attribute-class>java.lang.Boolean</attribute-class>
+          <default-value>#{securityContext.authenticated}</default-value>
+        </attribute>
+        <attribute>
+          <attribute-name>isAdminPage</attribute-name>
+          <attribute-class>java.lang.Boolean</attribute-class>
+          <default-value>#{false}</default-value>
+        </attribute>
+        <attribute>
+          <attribute-name>isEditingTemplate</attribute-name>
+          <attribute-class>java.lang.Boolean</attribute-class>
+          <default-value>#{false}</default-value>
+        </attribute>
+      </component>
+    </af:xmlContent>
+  </af:pageTemplateDef>
+</jsp:root>

@@ -1,0 +1,2244 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<navigationDefinition description="Default Navigation" 
+               id="default-navigation-model"
+               name="Default Navigation"
+               xmlns="http://xmlns.oracle.com/adf/rcs/catalog" visible="#{true}">
+  <contents>
+    <!--customFolder id="pages" factoryClass="oracle.webcenter.page.view.rc.PageServiceContextFactory"
+                  visible="true" insertFolderContents="true">
+      <attributes>
+        <attribute value="Page Hierarchy" attributeId="Title" isKey="false"/>
+        <attribute value="/adf/webcenter/pagegroup_qualifier.png" attributeId="IconURI"/>
+      </attributes>
+      <parameters>
+        <parameter id="path">/oracle/webcenter/portalapp/pagehierarchy/pages.xml</parameter>
+      </parameters>
+    </customFolder-->
+    <url id="home" visible="#{true}"
+         factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+         url="page://oracle/webcenter/portalapp/pages/home.jspx">
+      <attributes>
+        <attribute value="Home" isKey="false" attributeId="Title"/>
+      </attributes>
+    </url>
+    <folder id="services" visible="#{true}">
+      <attributes>
+        <attribute attributeId="Title" isKey="true" value="SERVICES"
+                   resourceBundle="com.huduma.app.portal.PortalBundle"/>
+      </attributes>
+      <contents>
+        <url id="births" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="BIRTHS" attributeId="Title" isKey="true"
+                       resourceBundle="com.huduma.app.portal.PortalBundle"/>
+          </attributes>
+          <contents>
+            <url id="contentItem" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services/Births/Application for Birth Certificate.html">
+              <attributes>
+                <attribute attributeId="Title" isKey="true"
+                           value="APPLICATION_FOR_BIRTH_CERTIFIC"
+                           resourceBundle="com.huduma.app.portal.PortalBundle"/>
+                <attribute value="false" attributeId="Redirect" isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem2"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Births/Registration of Birth Abroad.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Registration of Birth Abroad" isKey="false"/>
+              </attributes>
+            </url>
+            <url id="AcknowledgementOfBirthNotificationForParents"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Births/Acknowledgement of Birth Notification for Parents.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Acknowledgement of Birth Notification for Parents" isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem1"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Births/Registration of late Birth.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Registration of late Birth" isKey="false"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url visible="#{true}" id="businessAndTrade"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute isKey="false" attributeId="Title"
+                       value="Business and Trade"/>
+          </attributes>
+          <contents>
+            <url id="contentItem31"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Business and Trade/Application OF E- Tax Device.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application OF E- Tax Device"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem6"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Business and Trade/Application of Single Bsuiness Permit.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application of Single Bsuiness Permit"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem4"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Business and Trade/Application of VAT certificate.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application of VAT certificate"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem8"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Business and Trade/Company Registration.html">
+              <attributes>
+                <attribute attributeId="Title" value="Company Registration"
+                           isKey="false"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url visible="#{true}" id="deathAndBurial"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute isKey="false" attributeId="Title"
+                       value="Death and Burial"/>
+          </attributes>
+          <contents>
+            <url id="contentItem3"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Death and Burial/Application for Burial Permit.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Burial Permit"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem38"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Death and Burial/Application for Death Cerificate.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Death Cerificate"
+                           isKey="false"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url visible="#{true}" id="drivingAndTransport"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute isKey="false" attributeId="Title"
+                       value="Driving and Transport"/>
+          </attributes>
+          <contents>
+            <url id="contentItem87"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Driving and Transport/Application for Meat Transport License.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Meat Transport License"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem5"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Driving and Transport/Application for Motor Vechicle License.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Motor Vechicle License"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem97"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Driving and Transport/Application for Motor Vehicle Registration.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Motor Vehicle Registration"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem437"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Driving and Transport/Application for PSV License.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for PSV License"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem9"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Driving and Transport/Application for Transport License Board Certificate.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Transport License Board Certificate"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem98"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Driving and Transport/Application of Driver's Licence.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application of Driver's Licence"
+                           isKey="false"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url visible="#{true}" id="educationAndScholarships"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute isKey="false" attributeId="Title"
+                       value="Education and Scholarships"/>
+          </attributes>
+          <contents>
+            <url id="contentItem401"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Education and Scholarships/Application for Bursary.html">
+              <attributes>
+                <attribute attributeId="Title" value="Application for Bursary"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem17"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Education and Scholarships/Application for Higher Education Students Loan.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Higher Education Students Loan"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem41"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Education and Scholarships/Application for Kenya National Examination Council Courses.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Kenya National Examination Council Courses"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem55"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Education and Scholarships/Application of Compliance Certificate.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application of Compliance Certificate"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem29"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Education and Scholarships/Loan Repayment Modules.html">
+              <attributes>
+                <attribute attributeId="Title" value="Loan Repayment Modules"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem16"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Education and Scholarships/Loan Repayment Status Check.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Loan Repayment Status Check"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem27"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Education and Scholarships/Payment of Kenya National Examination Council Fees.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Payment of Kenya National Examination Council Fees"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem54"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Education and Scholarships/Repayment of Loans.html">
+              <attributes>
+                <attribute attributeId="Title" value="Repayment of Loans"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem76"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Education and Scholarships/Replacement of Kenya National Examination Council Certificates.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Replacement of Kenya National Examination Council Certificates"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem0"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Education and Scholarships/Student Guide to Loan Repayment.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Student Guide to Loan Repayment"
+                           isKey="false"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url visible="#{true}" id="employmentAndRetirement"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute isKey="false" attributeId="Title"
+                       value="Employment and Retirement"/>
+          </attributes>
+          <contents>
+            <url id="contentItem92"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Employment and Retirement/Aplication for Claimant Particulars.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Aplication for Claimant Particulars"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem85"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Employment and Retirement/Application for Certificate of Good Conduct.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Certificate of Good Conduct"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem68"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Employment and Retirement/Application for Invalidity Benefits.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Invalidity Benefits"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem519"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Employment and Retirement/Application for NSSF Benefits.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for NSSF Benefits"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem7"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Employment and Retirement/Application for Survivor Benefit.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Survivor Benefit"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem90"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Employment and Retirement/Application of PIN Certificate.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application of PIN Certificate"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem50"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Employment and Retirement/Registrartion of NHIF Membership.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Registrartion of NHIF Membership"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem138"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Employment and Retirement/Registration of NSSF Membership.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Registration of NSSF Membership"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem89"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Employment and Retirement/Registration of employer with NSSF.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Registration of employer with NSSF"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem53"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Employment and Retirement/Replacement of NHIF Card.html">
+              <attributes>
+                <attribute attributeId="Title" value="Replacement of NHIF Card"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem498"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Employment and Retirement/Replacement of NSSF Card.html">
+              <attributes>
+                <attribute attributeId="Title" value="Replacement of NSSF Card"
+                           isKey="false"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url visible="#{true}" id="healthAndDisability"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute isKey="false" attributeId="Title"
+                       value="Health and Disability"/>
+          </attributes>
+          <contents>
+            <url id="contentItem13"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Health and Disability/Certificate of good health.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Certificate of good health"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem75"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Health and Disability/Check Body Mass Index.html">
+              <attributes>
+                <attribute attributeId="Title" value="Check Body Mass Index"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem956"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Health and Disability/Network of National Hospitals.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Network of National Hospitals"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem15"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Health and Disability/Women and People with Disability Access to Government Procurement Opportunities Certificate.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Women and People with Disability Access to Government Procurement Opportunities Certificate"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem67"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Health and Disability/Yellow fever certificate.html">
+              <attributes>
+                <attribute attributeId="Title" value="Yellow fever certificate"
+                           isKey="false"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url visible="#{true}" id="housingAndLand"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute isKey="false" attributeId="Title"
+                       value="Housing and Land"/>
+          </attributes>
+          <contents>
+            <url id="contentItem365"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Housing and Land/Application for Buiding Society Licence.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Buiding Society Licence"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem72"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Housing and Land/Application for National Environmental Management Authority Licence.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for National Environmental Management Authority Licence"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem62"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Housing and Land/Application of Building Permit.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application of Building Permit"
+                           isKey="false"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url visible="#{true}" id="licensesAndPermits"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute isKey="false" attributeId="Title"
+                       value="Licenses and Permits"/>
+          </attributes>
+          <contents>
+            <url id="contentItem26"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Licenses and Permits/Application for Bonded Warehouse Licence.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Bonded Warehouse Licence"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem82"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Licenses and Permits/Application for Buiding Society Licence.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Buiding Society Licence"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem35"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Licenses and Permits/Application for Compliance Certificate.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Compliance Certificate"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem750"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Licenses and Permits/Application for Licence of Tourism Enterprise.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Licence of Tourism Enterprise"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem202"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Licenses and Permits/Application for Meat Transport.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Meat Transport"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem81"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Licenses and Permits/Application for National Environmental Management Authority Licence.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for National Environmental Management Authority Licence"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem39"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Licenses and Permits/Application for Public Gaming Licence.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Public Gaming Licence"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem18"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Licenses and Permits/Application for Special Marriage License.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Special Marriage License"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem23"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Licenses and Permits/Application for Transport License Board Certificate.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Transport License Board Certificate"
+                           isKey="false"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url visible="#{true}" id="marriages"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute isKey="false" attributeId="Title" value="Marriages"/>
+          </attributes>
+          <contents>
+            <url id="contentItem60"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Marriages/Application for Marriage License.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Marriage License"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem36"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Marriages/Application of Special Marriage License.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application of Special Marriage License"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem61"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Marriages/Getting Divorced.html">
+              <attributes>
+                <attribute attributeId="Title" value="Getting Divorced"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem882"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Marriages/Marriage Laws.html">
+              <attributes>
+                <attribute attributeId="Title" value="Marriage Laws"
+                           isKey="false"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url visible="#{true}" id="moneyAndTaxes"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute isKey="false" attributeId="Title"
+                       value="Money and Taxes"/>
+          </attributes>
+          <contents>
+            <url id="contentItem80"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Money and Taxes/Application for Tax Amnesty for Diaspora Citizens.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Tax Amnesty for Diaspora Citizens"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem758"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Money and Taxes/Application for Tax Compliance Certificate.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Tax Compliance Certificate"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem953"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Money and Taxes/Application for Tax Payers Registration.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Tax Payers Registration"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem86"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Money and Taxes/Application for Transfer of Motor Vehicles.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Transfer of Motor Vehicles"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem4632"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Money and Taxes/Application of Import Declaration.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application of Import Declaration"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem452"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Money and Taxes/Filing for Tax Returns.html">
+              <attributes>
+                <attribute attributeId="Title" value="Filing for Tax Returns"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem48"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Money and Taxes/Search for a Log book.html">
+              <attributes>
+                <attribute attributeId="Title" value="Search for a Log book"
+                           isKey="false"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url visible="#{true}" id="passportsAndVisas"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute isKey="false" attributeId="Title"
+                       value="Passports and Visas"/>
+          </attributes>
+          <contents>
+            <url id="contentItem10"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Passports and Visas/Search for a Log book.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Dependats Pass"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem311"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Passports and Visas/Application for Special Pass.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Special Pass"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem153"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Passports and Visas/Application for Students Pass.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for Students Pass"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem44"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Passports and Visas/Application for a Passport.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for a Passport"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem63"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Passports and Visas/Application for a residence permit.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for a residence permit"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem30"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 visible="#{true}"
+                 url="content://UCM/Huduma/Services/Passports and Visas/Application for a work permit.html">
+              <attributes>
+                <attribute attributeId="Title"
+                           value="Application for a work permit"
+                           isKey="false"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+      </contents>
+    </folder>
+    <folder id="government" visible="#{true}">
+      <attributes>
+        <attribute attributeId="Title" isKey="false" value="Government"/>
+      </attributes>
+      <contents>
+        <url visible="#{true}" id="governmentMinistries"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute isKey="false" attributeId="Title"
+                       value="Government Ministries"/>
+          </attributes>
+        </url>
+        <url visible="#{true}" id="countyGovernments"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute isKey="false" attributeId="Title"
+                       value="County Governments"/>
+          </attributes>
+        </url>
+        <url visible="#{true}" id="armsOfGovernment"
+             factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+             url="content://UCM/Huduma/Government/Arms of Government.html">
+          <attributes>
+            <attribute isKey="false" attributeId="Title"
+                       value="Arms of Government"/>
+          </attributes>
+        </url>
+        <url visible="#{true}" id="structureOfGovernment"
+             factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+             url="content://UCM/Huduma/Government/Structure of Government.html">
+          <attributes>
+            <attribute isKey="false" attributeId="Title"
+                       value="Structure of Government"/>
+          </attributes>
+        </url>
+      </contents>
+    </folder>
+    <folder id="servicesByMinistry" visible="#{true}">
+      <attributes>
+        <attribute attributeId="Title" isKey="false"
+                   value="Services By Ministry"/>
+      </attributes>
+      <contents>
+        <url id="agricultureLivestockAndFisheries"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             visible="#{true}"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute attributeId="Title"
+                       value="Agriculture, Livestock and Fisheries"
+                       isKey="false"/>
+          </attributes>
+          <contents>
+            <url id="contentItem885" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Agriculture, Livestock and Fisheries/State Department of Fisheries.html">
+              <attributes>
+                <attribute value="State Department of Fisheries" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url id="departmentOfSocialDevelopment" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="Department of Social Development"
+                       attributeId="Title" isKey="false"/>
+          </attributes>
+          <contents>
+            <url id="contentItem99" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Department of Social Development/Department of Social Development Guide Book.html">
+              <attributes>
+                <attribute value="Department of Social Development Guide Book" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem83" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Department of Social Development/Field Services and Administration User Guide.html">
+              <attributes>
+                <attribute value="Field Services and Administration User Guide" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem522" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Department of Social Development/Social WelfareCommunity Development Volunteerism.html">
+              <attributes>
+                <attribute value="Social WelfareCommunity Development Volunteerism" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+              <contents/>
+            </url>
+          </contents>
+        </url>
+        <url id="eastAfricanAffairsCommerceAndTourism" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="East African Affairs, Commerce and Tourism"
+                       attributeId="Title" isKey="false"/>
+          </attributes>
+          <contents>
+            <url id="contentItem303" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/East African Affairs, Commerce and Tourism/Bomas of Kenya.html">
+              <attributes>
+                <attribute value="Bomas of Kenya" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem34" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/East African Affairs, Commerce and Tourism/Brand Kenya.html">
+              <attributes>
+                <attribute value="Brand Kenya" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem265" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/East African Affairs, Commerce and Tourism/Commerce and Tourism.html">
+              <attributes>
+                <attribute value="Commerce and Tourism" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem12" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/East African Affairs, Commerce and Tourism/Export Promotion Council.html">
+              <attributes>
+                <attribute value="Export Promotion Council" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem413" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/East African Affairs, Commerce and Tourism/Kenya National Trading Corporation.html">
+              <attributes>
+                <attribute value="Kenya National Trading Corporation" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem96" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/East African Affairs, Commerce and Tourism/Kenya Safari Lodges - Hotels.html">
+              <attributes>
+                <attribute value="Kenya Safari Lodges - Hotels" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem32" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/East African Affairs, Commerce and Tourism/Kenya Tourist Board.html">
+              <attributes>
+                <attribute value="Kenya Tourist Board" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem11" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/East African Affairs, Commerce and Tourism/Kenya Utalii College and Hotel.html">
+              <attributes>
+                <attribute value="Kenya Utalii College and Hotel" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem22" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/East African Affairs, Commerce and Tourism/Kenyatta International Convention Centre.html">
+              <attributes>
+                <attribute value="Kenyatta International Convention Centre" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+              <contents/>
+            </url>
+            <url id="contentItem746" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/East African Affairs, Commerce and Tourism/Tourism Finance Corporation.html">
+              <attributes>
+                <attribute value="Tourism Finance Corporation" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem370" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/East African Affairs, Commerce and Tourism/Tourism Fund.html">
+              <attributes>
+                <attribute value="Tourism Fund" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem735" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/East African Affairs, Commerce and Tourism/Tourism Regulatory Authority.html">
+              <attributes>
+                <attribute value="Tourism Regulatory Authority" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url id="environmentWaterAndNaturalResources" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="Environment, Water and Natural Resources"
+                       attributeId="Title" isKey="false"/>
+          </attributes>
+          <contents>
+            <url id="contentItem40" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Environment, Water and Natural Resources/Athi Water Services Board.html">
+              <attributes>
+                <attribute value="Athi Water Services Board" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem52" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Environment, Water and Natural Resources/Tana Water Services Board.html">
+              <attributes>
+                <attribute value="Tana Water Services Board" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url id="interioCoordinationOfNationalGovernment" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="Interior &amp; co-ordination of National Government" attributeId="Title" isKey="false"/>
+          </attributes>
+          <contents>
+            <url id="contentItem94" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Interior And co-ordination of National Government/Probation and Aftercare Service.html">
+              <attributes>
+                <attribute value="Probation and Aftercare Service" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+            <url id="contentItem846" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Interior And co-ordination of National Government/State Department for Co-ordination of National Government (Betting Control - Licensing Board).html">
+              <attributes>
+                <attribute value="State Department for Co-ordination of National Government (Betting Control - Licensing Board)" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url id="kenyaCopyrightBoard" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="Kenya Copyrights Board" attributeId="Title"
+                       isKey="false"/>
+          </attributes>
+          <contents>
+            <url id="contentItem33" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Kenya Copyrights Board/KECOBO Guide Book.html">
+              <attributes>
+                <attribute value="KECOBO Guide Book" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url id="kenyaPoliceService" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="Kenya Police Service" attributeId="Title"
+                       isKey="false"/>
+          </attributes>
+          <contents>
+            <url id="contentItem663" visible="#{true}"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Kenya Police Service/OOP-Police Department.html">
+              <attributes>
+                <attribute value="OOP-Police Department" attributeId="Title"
+                           isKey="false"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url id="kenyaUrbanRoadsAuthority" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="Kenya Urban Roads Authority" attributeId="Title"
+                       isKey="false"/>
+          </attributes>
+          <contents>
+            <url visible="#{true}" id="contentItem58"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Kenya Urban Roads Authority/KURA Guide Book.html">
+              <attributes>
+                <attribute isKey="false" value="KURA Guide Book"
+                           attributeId="Title"/>
+              </attributes>
+              <contents/>
+            </url>
+          </contents>
+        </url>
+        <url id="ministryOfEnvironmentWaterAndNaturalResources"
+             visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="Ministry of Environment, Water and Natural Resources"
+                       attributeId="Title" isKey="false"/>
+          </attributes>
+          <contents>
+            <url visible="#{true}" id="contentItem796"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Environment, Water and Natural Resources/Ministry Of Environment Water And Natural Resources Guide Book.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Ministry Of Environment Water And Natural Resources Guide Book"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url id="ministryOfHealth" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="Ministry of Health" attributeId="Title"
+                       isKey="false"/>
+          </attributes>
+          <contents>
+            <url visible="#{true}" id="contentItem56"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Administration.html">
+              <attributes>
+                <attribute isKey="false" value="Administration"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem45"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Communicable Disease Prevention and Control CDPC.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Communicable Disease Prevention and Control CDPC"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem66"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Curative and Rehabilitative Services CRS.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Curative and Rehabilitative Services CRS"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem14"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Director of Medical ServicesDMS.html">
+              <attributes>
+                <attribute isKey="false" value="Director of Medical ServicesDMS"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem565"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Directorate of Clinical ServicesGCS.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Directorate of Clinical ServicesGCS"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem508"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Directorate of Health Standards, Quality Assurance and RegulationsDHSQAR.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Directorate of Health Standards, Quality Assurance and RegulationsDHSQAR"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem73"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Directorate of Policy, Planning and Health Care FinancingDPPHCF.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Directorate of Policy, Planning and Health Care FinancingDPPHCF"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem95"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Directorate of Preventive and Promotive Health Services DPPS.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Directorate of Preventive and Promotive Health Services DPPS"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem28"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Emergency and Disaster Risk Management EDRM.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Emergency and Disaster Risk Management EDRM"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem559"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Environmental Health and Sanitation Services EHSS.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Environmental Health and Sanitation Services EHSS"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem199"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Family Health FH.html">
+              <attributes>
+                <attribute isKey="false" value="Family Health FH"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem326"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Forensic Medicine and Medico FMM.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Forensic Medicine and Medico FMM"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem180"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Government Chemists GC.html">
+              <attributes>
+                <attribute isKey="false" value="Government Chemists GC"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem25"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Health Financing and Budgeting HFB.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Health Financing and Budgeting HFB"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem88"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Health Informatics, Monitoring and Evaluation HIME.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Health Informatics, Monitoring and Evaluation HIME"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem47"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Health Regulation and Legislation HRL.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Health Regulation and Legislation HRL"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem146"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Health Research and Development HRD.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Health Research and Development HRD"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem2958"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Health Sector Policy, Planning and Finance HSPPF.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Health Sector Policy, Planning and Finance HSPPF"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem9808"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Mental Health Services Unit MHSU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Mental Health Services Unit MHSU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem387"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Ministry of Health.html">
+              <attributes>
+                <attribute isKey="false" value="Ministry of Health"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem631"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/National Public Health Laboratory Services NPH.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="National Public Health Laboratory Services NPH"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem527"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Non-Communicable Diseases and Injuries NCDI.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Non-Communicable Diseases and Injuries NCDI"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem659"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Nursing Services Unit NSU.html">
+              <attributes>
+                <attribute isKey="false" value="Nursing Services Unit NSU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem965"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Specialized Clinical Services Unit SCSU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Specialized Clinical Services Unit SCSU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem969"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health/Standards and Quality Assurance SQA.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Standards and Quality Assurance SQA"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url id="ministryOfHealthServices" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="Ministry of Health Services" attributeId="Title"
+                       isKey="false"/>
+          </attributes>
+          <contents>
+            <url visible="#{true}" id="contentItem4814"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Community Health Strategy Unit CHSU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Community Health Strategy Unit CHSU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem20"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Continued Professional Development Unit CPDU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Continued Professional Development Unit CPDU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem37"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Disaster Risk Management Unit NRMU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Disaster Risk Management Unit NRMU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem266"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Disease Surveillance and Response Unit DSRU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Disease Surveillance and Response Unit DSRU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem999"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Field Epidemiology Training Programme FETP.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Field Epidemiology Training Programme FETP"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem691"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Health Administration Unit HAU.html">
+              <attributes>
+                <attribute isKey="false" value="Health Administration Unit HAU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem59"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Health Promotion Unit HPU.html">
+              <attributes>
+                <attribute isKey="false" value="Health Promotion Unit HPU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem600"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Health Standards and Norm Unit HSNU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Health Standards and Norm Unit HSNU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem2980"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Health and Aging Unit HAU.html">
+              <attributes>
+                <attribute isKey="false" value="Health and Aging Unit HAU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem249"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Laboratory Diagnostics Unit LDU.html">
+              <attributes>
+                <attribute isKey="false" value="Laboratory Diagnostics Unit LDU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem804"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Malaria Control Programme MCP.html">
+              <attributes>
+                <attribute isKey="false" value="Malaria Control Programme MCP"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem751"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Medical Engineering and Technologies Services Unit METSU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Medical Engineering and Technologies Services Unit METSU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem259"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/National AIDS STI Control Programme NASCP.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="National AIDS STI Control Programme NASCP"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem19"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/National Ambulance Services Unit NASU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="National Ambulance Services Unit NASU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem558"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/National Blood Transfusion Services Unit NBTSU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="National Blood Transfusion Services Unit NBTSU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem283"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/National Public Health Laboratory NPHL.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="National Public Health Laboratory NPHL"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem2486"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Neglected Tropical Diseases Unit NTDU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Neglected Tropical Diseases Unit NTDU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem997"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Neonatal, Child and Adolescent Health NCAH.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Neonatal, Child and Adolescent Health NCAH"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem613"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Non-Communicable Diseases Control Unit NCDCU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Non-Communicable Diseases Control Unit NCDCU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem91"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Nutrition and Dietetics ND.html">
+              <attributes>
+                <attribute isKey="false" value="Nutrition and Dietetics ND"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem203"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Occupational Health and Safety Unit OHSU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Occupational Health and Safety Unit OHSU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem505"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Quality Assurance Unit QAU.html">
+              <attributes>
+                <attribute isKey="false" value="Quality Assurance Unit QAU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem150"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Reproductive and Maternal Health Unit RMHU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Reproductive and Maternal Health Unit RMHU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem8873"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Vaccines and Immunization Services Programme VISP.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Vaccines and Immunization Services Programme VISP"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem197"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Violence and Injury Prevention Unit VIPU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Violence and Injury Prevention Unit VIPU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem649"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health Services/Zoonotic Diseases Unit ZDU.html">
+              <attributes>
+                <attribute isKey="false" value="Zoonotic Diseases Unit ZDU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url id="ministryOfHealthMoreServices" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="Ministry of Health More Services"
+                       attributeId="Title" isKey="false"/>
+          </attributes>
+          <contents>
+            <url visible="#{true}" id="contentItem65"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/Accounts AC.html">
+              <attributes>
+                <attribute isKey="false" value="Accounts AC"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem423"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/Administration.html">
+              <attributes>
+                <attribute isKey="false" value="Administration"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem891"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/Finance.html">
+              <attributes>
+                <attribute isKey="false" value="Finance"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem315"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/Food Safety and Quality FSQ.html">
+              <attributes>
+                <attribute isKey="false" value="Food Safety and Quality FSQ"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem329"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/Gender Mainstreaming Unit GMU.html">
+              <attributes>
+                <attribute isKey="false" value="Gender Mainstreaming Unit GMU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem79"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/General Administration GA.html">
+              <attributes>
+                <attribute isKey="false" value="General Administration GA"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem71"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/Health Information Systems Unit HISU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Health Information Systems Unit HISU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem388"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/Health Research Dissemination Unit HRDU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Health Research Dissemination Unit HRDU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem43"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/Health Sector Monitoring and Evaluation Unit HSMEU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Health Sector Monitoring and Evaluation Unit HSMEU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem936"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/Health Sector Policy and Strategic Planning Unit HSPSPU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Health Sector Policy and Strategic Planning Unit HSPSPU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem453"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/Human Resource Development HRD.html">
+              <attributes>
+                <attribute isKey="false" value="Human Resource Development HRD"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem510"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/Human Resource Management HRM.html">
+              <attributes>
+                <attribute isKey="false" value="Human Resource Management HRM"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem147"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/ICT ICT.html">
+              <attributes>
+                <attribute isKey="false" value="ICT ICT"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem1263"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/Internal Audit IA.html">
+              <attributes>
+                <attribute isKey="false" value="Internal Audit IA"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem57"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/International Health Relations UnitI HRU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="International Health Relations UnitI HRU"
+                           attributeId="Title"/>
+              </attributes>
+              <contents/>
+            </url>
+            <url visible="#{true}" id="contentItem515"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/National HIV Reference Laboratory NHRL.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="National HIV Reference Laboratory NHRL"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem237"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/National Health Research Strategy Unit NHRSU.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="National Health Research Strategy Unit NHRSU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem8143"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/Pollution and Waste Manager PWM.html">
+              <attributes>
+                <attribute isKey="false" value="Pollution and Waste Manager PWM"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem261"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/Port Health Services PHS.html">
+              <attributes>
+                <attribute isKey="false" value="Port Health Services PHS"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem282"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/Public Private Partnership PPP.html">
+              <attributes>
+                <attribute isKey="false" value="Public Private Partnership PPP"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem397"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/Public Relations PR.html">
+              <attributes>
+                <attribute isKey="false" value="Public Relations PR"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem8601"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/SDS, Administration SDSA.html">
+              <attributes>
+                <attribute isKey="false" value="SDS, Administration SDSA"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem2835"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/Supply Chain Management SCM.html">
+              <attributes>
+                <attribute isKey="false" value="Supply Chain Management SCM"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem162"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/TB Reference Laboratory Services TRLS.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="TB Reference Laboratory Services TRLS"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem42"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/Tobacco Control Unit TCU.html">
+              <attributes>
+                <attribute isKey="false" value="Tobacco Control Unit TCU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem93"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Health More Services/eHealth Development Unit EHDU.html">
+              <attributes>
+                <attribute isKey="false" value="eHealth Development Unit EHDU"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url id="ministryOfInteriorAndCordinationOfNationalGovernment"
+             visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="Ministry of Interior and Co-Ordination of National Government"
+                       attributeId="Title" isKey="false"/>
+          </attributes>
+          <contents>
+            <url visible="#{true}" id="contentItem984"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Interior and Co-Ordination of National Government/Directorate of Criminal Investigations.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Directorate of Criminal Investigations"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url id="ministryOfLabourSocialSecurityAndServices" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="Ministry of Labour Social Security and Services"
+                       attributeId="Title" isKey="false"/>
+          </attributes>
+          <contents>
+            <url visible="#{true}" id="contentItem552"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Labour Social Security and Services/Department of Children Services.html">
+              <attributes>
+                <attribute isKey="false" value="Department of Children Services"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url id="ministryOfLandHousingAndUrbanDevelopment" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="Ministry of Land, Housing and Urban Development"
+                       attributeId="Title" isKey="false"/>
+          </attributes>
+          <contents>
+            <url visible="#{true}" id="contentItem836"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Land, Housing and Urban Development/Directorate of Housing Guide Book.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Directorate of Housing Guide Book"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem244"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Land, Housing and Urban Development/Directorate of Lands Guide Book.html">
+              <attributes>
+                <attribute isKey="false" value="Directorate of Lands Guide Book"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem420"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Land, Housing and Urban Development/Directorate of Nairobi Metropolitan and Urban Development Guide Book.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Directorate of Nairobi Metropolitan and Urban Development Guide Book"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem554"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Land, Housing and Urban Development/Other Public Works.html">
+              <attributes>
+                <attribute isKey="false" value="Other Public Works"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem433"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Ministry of Land, Housing and Urban Development/Public Works Guide Book.html">
+              <attributes>
+                <attribute isKey="false" value="Public Works Guide Book"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url id="nationalCohesionAndIntergrationCommision" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="National Cohesion and Intergration Commision"
+                       attributeId="Title" isKey="false"/>
+          </attributes>
+          <contents>
+            <url visible="#{true}" id="contentItem610"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/National Cohesion and Intergration Commision/NCIC Guide Book.html">
+              <attributes>
+                <attribute isKey="false" value="NCIC Guide Book"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url id="nationalCouncilForChildrenService" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="National Council for Children Service"
+                       attributeId="Title" isKey="false"/>
+          </attributes>
+          <contents>
+            <url visible="#{true}" id="contentItem425"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/National Council for Children Service/National Council for Children Services.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="National Council for Children Services"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url id="nssf" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="NSSF" attributeId="Title" isKey="false"/>
+          </attributes>
+          <contents>
+            <url visible="#{true}" id="contentItem504"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/NSSF/NSSF Guide Book.html">
+              <attributes>
+                <attribute isKey="false" value="NSSF Guide Book"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url id="officeOfTheAttorneyGeneralAndStateDepartment" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="Office of the Attorney General and State Department"
+                       attributeId="Title" isKey="false"/>
+          </attributes>
+          <contents>
+            <url visible="#{true}" id="contentItem996"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Office of the Attorney General and State Department/Advocates Complaints Commission.html">
+              <attributes>
+                <attribute isKey="false" value="Advocates Complaints Commission"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem160"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Office of the Attorney General and State Department/Council of Legal Education.html">
+              <attributes>
+                <attribute isKey="false" value="Council of Legal Education"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem445"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Office of the Attorney General and State Department/National Crime Research Centre.html">
+              <attributes>
+                <attribute isKey="false" value="National Crime Research Centre"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem628"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Office of the Attorney General and State Department/National Legal Aid Awareness Programme.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="National Legal Aid Awareness Programme"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem103"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Office of the Attorney General and State Department/Public Trustee.html">
+              <attributes>
+                <attribute isKey="false" value="Public Trustee"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem536"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/Office of the Attorney General and State Department/Registar General.html">
+              <attributes>
+                <attribute isKey="false" value="Registar General"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+        <url id="theNationalTreasuryStateDepartment" visible="#{true}"
+             factoryClass="oracle.webcenter.portalframework.sitestructure.rc.AdfPageResourceFactory"
+             url="page://oracle/webcenter/portalapp/pages/Navigation.jspx">
+          <attributes>
+            <attribute value="The National Treasury State Department"
+                       attributeId="Title" isKey="false"/>
+          </attributes>
+          <contents>
+            <url visible="#{true}" id="contentItem724"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/The National Treasury State Department/Accountant General's.html">
+              <attributes>
+                <attribute isKey="false" value="Accountant General's"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem475"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/The National Treasury State Department/Administration(Accounting Services).html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Administration(Accounting Services)"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem466"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/The National Treasury State Department/Administration(General).html">
+              <attributes>
+                <attribute isKey="false" value="Administration(General)"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem24"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/The National Treasury State Department/Budgetary supply department.html">
+              <attributes>
+                <attribute isKey="false" value="Budgetary supply department"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem1162"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/The National Treasury State Department/Debt Management.html">
+              <attributes>
+                <attribute isKey="false" value="Debt Management"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem2553"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/The National Treasury State Department/Economic Affairs.html">
+              <attributes>
+                <attribute isKey="false" value="Economic Affairs"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem795"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/The National Treasury State Department/External Resources.html">
+              <attributes>
+                <attribute isKey="false" value="External Resources"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem635"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/The National Treasury State Department/Government Investment and Public Entreprises.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Government Investment and Public Entreprises"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem553"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/The National Treasury State Department/Integrated Financial Management Information Systems.html">
+              <attributes>
+                <attribute isKey="false"
+                           value="Integrated Financial Management Information Systems"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem46"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/The National Treasury State Department/Internal Auditor General's.html">
+              <attributes>
+                <attribute isKey="false" value="Internal Auditor General's"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem170"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/The National Treasury State Department/Pensions.html">
+              <attributes>
+                <attribute isKey="false" value="Pensions"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem778"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/The National Treasury State Department/Public Private Partnership.html">
+              <attributes>
+                <attribute isKey="false" value="Public Private Partnership"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem571"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/The National Treasury State Department/Public Procurement Directorate.html">
+              <attributes>
+                <attribute isKey="false" value="Public Procurement Directorate"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+            <url visible="#{true}" id="contentItem189"
+                 factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+                 url="content://UCM/Huduma/Services By Ministry/The National Treasury State Department/Retirement Benefits Authority.html">
+              <attributes>
+                <attribute isKey="false" value="Retirement Benefits Authority"
+                           attributeId="Title"/>
+              </attributes>
+            </url>
+          </contents>
+        </url>
+      </contents>
+    </folder>
+  </contents>
+  <schema resourceBundle="oracle.adf.rc.attribute.nls.AttributeBundle">
+    <descriptor multivalue="false" shortLabelKey="TITLE.SHORT_PROMPT_KEY"
+                labelKey="TITLE.PROMPT_KEY" attributeId="Title"
+                searchable="true" endUserVisible="true"/>
+    <descriptor multivalue="false" shortLabelKey="ACCESS_KEY.SHORT_PROMPT_KEY"
+                labelKey="ACCESS_KEY.PROMPT_KEY" attributeId="AccessKey"
+                searchable="true" endUserVisible="true"/>
+    <descriptor multivalue="false" shortLabelKey="DESCRIPTION.SHORT_PROMPT_KEY"
+                labelKey="DESCRIPTION.PROMPT_KEY" attributeId="Description"
+                searchable="true" endUserVisible="true"/>
+    <descriptor multivalue="false" shortLabelKey="ICON_URI.SHORT_PROMPT_KEY"
+                labelKey="ICON_URI.PROMPT_KEY" attributeId="IconURI"
+                searchable="true" endUserVisible="true"/>
+    <descriptor multivalue="true" shortLabelKey="SUBJECT.SHORT_PROMPT_KEY"
+                labelKey="SUBJECT.PROMPT_KEY" attributeId="Subject"
+                searchable="true" endUserVisible="true"/>
+    <descriptor multivalue="false"
+                shortLabelKey="REDIRECT_FLAG.SHORT_PROMPT_KEY"
+                labelKey="REDIRECT_FLAG.PROMPT_KEY" attributeId="Redirect"
+                searchable="true" endUserVisible="true"/>
+    <descriptor multivalue="false" shortLabelKey="TARGET_FRAME.SHORT_PROMPT_KEY"
+                labelKey="TARGET_FRAME.PROMPT_KEY" attributeId="Target"
+                searchable="true" endUserVisible="true"/>
+    <descriptor multivalue="false" shortLabelKey="TOOL_TIP.SHORT_PROMPT_KEY"
+                labelKey="TOOL_TIP.PROMPT_KEY" attributeId="ToolTip"
+                searchable="true" endUserVisible="true"/>
+    <descriptor multivalue="false" shortLabelKey="MODIFIED.SHORT_PROMPT_KEY"
+                labelKey="MODIFIED.PROMPT_KEY" attributeId="Modified"
+                searchable="true" endUserVisible="true"/>
+    <descriptor multivalue="false"
+                shortLabelKey="CHANGE_FREQUENCY.SHORT_PROMPT_KEY"
+                labelKey="CHANGE_FREQUENCY.PROMPT_KEY"
+                attributeId="ChangeFrequency" searchable="true"
+                endUserVisible="true"/>
+    <descriptor multivalue="false" shortLabelKey="SIGNIFICANCE.SHORT_PROMPT_KEY"
+                labelKey="SIGNIFICANCE.PROMPT_KEY" attributeId="Significance"
+                searchable="true" endUserVisible="true"/>
+    <descriptor multivalue="false" shortLabelKey="EXTERNAL_ID"
+                labelKey="EXTERNAL_ID" attributeId="ExternalId"
+                searchable="true" endUserVisible="true"
+                resourceBundle="oracle.webcenter.navigationeditor.view.resource.NavigationEditorBundle"/>
+  </schema>
+</navigationDefinition>

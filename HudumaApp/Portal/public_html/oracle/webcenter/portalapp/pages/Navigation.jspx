@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:pageTemplate viewId="/oracle/webcenter/portalapp/pagetemplates/pageTemplate_globe.jspx"
+                         value="#{bindings.pageTemplateBinding}" id="pt1">
+          <f:facet name="content">
+            <af:panelGroupLayout id="pgl1" styleClass="services" valign="top"
+                                 layout="horizontal">
+              <af:panelGroupLayout id="pgl2" styleClass="services"
+                                   layout="vertical">
+                                    <c:set var="firstLevelNode" value="#{sessionScope.scopeNodeId}" scope="page"/> 
+                    <c:set value="startNode=${firstLevelNode}, includeStartNode=false" var="currSel" scope="session"/> 
+                <af:forEach var="node" varStatus="vs"
+                            items="#{navigationContext.defaultNavigationModel.listModel[currSel]}">
+                  <af:commandLink id="commandLink23" text="#{node.title}"
+                                  inlineStyle="font-size:small;#{node.selected ? 'font-weight:bold;' : ''};"
+                                  action="pprnav"
+                                  disabled="#{not node.navigable}"
+                                  actionListener="#{navigationContext.processAction}"
+                                  clientComponent="#{node.attributes['Target'] == '_popup' ? true : false}"
+                                  styleClass="#{node.selected ? 'selectedService':'nonSelectedService'} nav nav-tabs">
+                    <!-- pass node to processAction for setting current selection and navigation  -->
+                    <f:attribute name="node" value="#{node}"/>
+                    <c:if test="${node.attributes['Target'] == '_popup'}">
+                      <af:clientAttribute name="modelPath"
+                                          value="#{node.navigationModel.metadataId}"/>
+                      <af:clientAttribute name="selectedPrettyUrl"
+                                          value="#{node.prettyUrl}"/>
+                      <af:clientAttribute name="selectedTitle"
+                                          value="#{node.title}"/>
+                    </c:if>
+                    <af:setPropertyListener from="#{node.children}"
+                                            to="#{sessionScope.scopeNode}"
+                                            type="action"/>
+                    <af:setPropertyListener from="#{node.title}"
+                                            to="#{sessionScope.scopeNodeTitle}"
+                                            type="action"/>
+                  </af:commandLink>
+                </af:forEach>
+              </af:panelGroupLayout>
+              <af:panelGroupLayout id="pgl3" layout="vertical"
+                                   styleClass="selectedServiceList"
+                                   inlineStyle="min-height:200px;">
+                <af:outputText value="#{sessionScope.scopeNodeTitle}" id="ot1"
+                               styleClass="selectedServiceTitle"/>
+                <af:forEach var="node3" varStatus="vs3"
+                            items="#{navigationContext.currentNavigationModel.currentSelection.children}">
+                  <af:commandLink id="commandLink51" text="#{node3.title}"
+                                  inlineStyle="padding-left:30px; text-decoration:underline;"
+                                  action="pprnav"
+                                  disabled="#{not node3.navigable}"
+                                  actionListener="#{navigationContext.processAction}"
+                                  clientComponent="#{node3.attributes['Target'] == '_popup' ? true : false}">
+                    <!-- pass node to processAction for setting current selection and navigation  -->
+                    <f:attribute name="node" value="#{node3}"/>
+                    <c:if test="${node3.attributes['Target'] == '_popup'}">
+                      <af:clientAttribute name="modelPath"
+                                          value="#{node3.navigationModel.metadataId}"/>
+                      <af:clientAttribute name="selectedPrettyUrl"
+                                          value="#{node3.prettyUrl}"/>
+                      <af:clientAttribute name="selectedTitle"
+                                          value="#{node3.title}"/>
+                    </c:if>
+                  </af:commandLink>
+                </af:forEach>
+              </af:panelGroupLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
