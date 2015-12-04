@@ -5,6 +5,8 @@
           xmlns:pe="http://xmlns.oracle.com/adf/pageeditor"
           xmlns:cust="http://xmlns.oracle.com/adf/faces/customizable"
           xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <af:resource type="css"
+               source="https://fonts.googleapis.com/css?family=Open+Sans"/>
   <jsp:directive.page contentType="text/html;charset=UTF-8"/>
   <f:loadBundle basename="oracle.webcenter.portalframework.sitestructure.resource.PortalAppPageResource"
                 var="portalResource"/>
@@ -209,7 +211,7 @@
                 </af:panelGroupLayout>
                 <af:outputText value="POPULAR SEARCHES: Renew Driving Licence, Apply For ID, Register My Business"
                                id="pt_ot9"
-                               inlineStyle="color: #b9bdc2; font-family: openSans;"/>
+                               inlineStyle="color: #b9bdc2; font-family: 'Open Sans';"/>
               </af:panelGroupLayout>
               <af:spacer height="20" id="spacer2"/>
               <af:spacer id="sp1" height="20px"/>
@@ -235,36 +237,50 @@
                                 inlineStyle="background-image:url(#{facesContext.externalContext.requestContextPath}/images/globe_tab-bkg.png);background-position:center top;background-repeat:repeat-x;padding-top:2px;"
                                 rendered="#{!composerContext.inEditMode and attrs.showNavigation and !attrs.isEditingTemplate}">
          <af:panelGroupLayout id="pt_pg18" layout="horizontal" valign="top"
-                             styleClass="breadCrumbs"
+                             styleClass="breadCrumbs AFStretchWidth"
                              inlineStyle="padding:5.0px;"
                               rendered="#{navigationContext.currentNavigationModel.currentSelection.title ne 'Home' or navigationContext.currentNavigationModel.currentSelection.title eq '' and navigationContext.currentNavigationModel.currentSelection.title or null}">
-                             <af:commandLink action="pprnav" text="Home"
-                           actionListener="#{navigationContext.processAction}"
-                           id="cl2" inlineStyle="color:White;">
-      <f:attribute name="node"
-                             value="#{navigationContext.defaultNavigationModel.node['home']}"/>
-    </af:commandLink>
-          <af:spacer width="3" height="10" id="pt_s8"/>
-          <af:outputText value=">" id="pt_ot3"
-                         inlineStyle="width:1em;color:white;margin-left:5px;margin-right:5px;"/>
-          <af:panelGroupLayout id="pt_pgl7" layout="horizontal" valign="top"
-                             rendered="#{navigationContext.currentNavigationModel.currentSelection.title ne 'Home'}"
-                             halign="left" styleClass="breadCrumbs">
-          <af:breadCrumbs id="bc1" var="node" varStatus="vs"
-                          value="#{navigationContext.currentNavigationModel.menuModel['startNode=/, includeStartNode=false']}">
-            <f:facet name="nodeStamp">
-             <af:commandNavigationItem id="pt_cni1" text="#{node.title}"
-                                        actionListener="#{navigationContext.processAction}"
-                                        action="pprnav" partialSubmit="true"
-                                        disabled="true"
-                                       inlineStyle="color:White;">
+            <af:panelGroupLayout id="pt_pgl29" layout="horizontal"
+                                 inlineStyle="margin-left:130px;">
+              <af:commandLink action="pprnav" text="Home"
+                              actionListener="#{navigationContext.processAction}"
+                              id="cl2" inlineStyle="color:White;">
                 <f:attribute name="node"
-                             value="#{navigationContext.defaultNavigationModel.node[sessionScope.scopeNodeId]}"/>
-              </af:commandNavigationItem>
-            </f:facet>
-          </af:breadCrumbs>
-        </af:panelGroupLayout>
-        </af:panelGroupLayout>
+                             value="#{navigationContext.defaultNavigationModel.node['home']}"/>
+              </af:commandLink>
+              <af:spacer width="3" height="10" id="pt_s8"/>
+              <af:outputText value=">" id="pt_ot3"
+                             inlineStyle="width:1em;color:white;margin-left:5px;margin-right:5px;"/>
+              <af:panelGroupLayout id="pt_pgl7" layout="horizontal" valign="top"
+                                   rendered="#{navigationContext.currentNavigationModel.currentSelection.title ne 'Home'}"
+                                   halign="left" styleClass="breadCrumbs"
+                                   inlineStyle="padding-top:7px;">
+                <af:breadCrumbs id="bc1" var="node" varStatus="vs"
+                                value="#{navigationContext.currentNavigationModel.menuModel['startNode=/, includeStartNode=false']}">
+                  <f:facet name="nodeStamp">
+                    <af:commandNavigationItem id="pt_cni1" text="#{node.title}"
+                                              actionListener="#{navigationContext.processAction}"
+                                              action="pprnav"
+                                              partialSubmit="true"
+                                              disabled="true"
+                                              inlineStyle="color:White;">
+                      <f:attribute name="node"
+                                   value="#{navigationContext.defaultNavigationModel.node[sessionScope.scopeNodeId]}"/>
+                    </af:commandNavigationItem>
+                  </f:facet>
+                </af:breadCrumbs>
+              </af:panelGroupLayout>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout id="panelGroupLayout5" valign="middle"
+                                 halign="right"
+                                 inlineStyle="width:300px;float:right;margin-right:100px;" layout="horizontal">
+              <af:inputText id="inputText1"/>
+              <af:commandButton id="commandButton1"
+                                icon="/images/magnify_glass.png"
+                                inlineStyle="border:none !important;"
+                                styleClass="searchMiniButton"/>
+            </af:panelGroupLayout>
+          </af:panelGroupLayout>
         </cust:panelCustomizable>
         <af:popup id="rendererPopup" contentDelivery="lazyUncached"
                   launcherVar="source" eventContext="launcher">
@@ -285,7 +301,7 @@
         </af:popup>
         <af:panelGroupLayout id="pt_pgl3" styleClass="headerText2" rendered="#{navigationContext.currentNavigationModel.currentSelection.title eq 'Home'}">
           <!--<af:outputText value="#{hudumaResource.homeHeaderText2}" id="pt_ot6"/>-->
-          <p style="color:White; font-family:openSans; font-size:small; text-align: justify;">
+          <p style="color:White; font-family:'Open Sans'; font-size:small; text-align: justify;">
           
           Huduma Kenya is a programme by the Government of Kenya that aims to transform Public Service Delivery by providing citizens access to various Public Services and information from One Stop Shop citizen service centres called Huduma Centres and through integrated. technology platforms.
           </p>
@@ -313,7 +329,7 @@
               <af:spacer width="15" id="pt_s11"/>
               <af:panelGroupLayout id="pt_pgl24">
                 <af:outputText value="Services" id="pt_ot7"
-                               inlineStyle="font-family: openSans; font-weight:500; font-size: medium;"/>
+                               inlineStyle="font-family: 'Open Sans'; font-weight:500; font-size: medium;"/>
                 <af:separator id="pt_s28" styleClass="footerLinksSeperator"/>
                 <af:panelGroupLayout id="pt_pgl25" layout="horizontal"
                                      valign="top">
@@ -367,7 +383,7 @@
               <af:spacer width="15" id="pt_s12"/>
               <af:panelGroupLayout id="pt_pgl26">
                 <af:outputText value="Governement" id="pt_ot8"
-                               inlineStyle="font-family: openSans; font-weight:500;font-size:medium; color:#58595B;"/>
+                               inlineStyle="font-family: 'Open Sans'; font-weight:500;font-size:medium; color:#58595B;"/>
                 <af:separator id="pt_s9" styleClass="footerLinksSeperator"/>
                 <af:panelGroupLayout id="panelGroupLayout3" layout="horizontal"
                                      valign="top">
@@ -432,7 +448,7 @@
           <!--copy right-->
           <af:panelGroupLayout id="pt_pgl13" layout="horizontal"
                                styleClass="footerEnd"
-                               inlineStyle="font-family:openSans;">
+                               inlineStyle="font-family:'Open Sans';">
             <af:outputText id="outputText1" value="© 2015 Huduma Kenya"/>
             <af:goLink text="Privacy Policy Statement" id="goLink1"
                        inlineStyle="color:white;"/>
