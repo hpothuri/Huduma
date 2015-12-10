@@ -122,39 +122,47 @@
                               rendered="#{attrs.showLogin and !securityContext.authenticated}">
                     <af:panelGroupLayout id="pt_pgl27" layout="horizontal">
                       <af:commandButton text="Sign In" id="pt_cb3"
-                                        styleClass="signInButton"/>
+                                        styleClass="signInButton">
+                        <af:showPopupBehavior popupId="pt_p1"
+                                              triggerType="action"/>
+                      </af:commandButton>
                       <af:spacer width="10" height="10" id="pt_s7"/>
                       <af:commandButton text="Register" id="pt_cb4"
                                         styleClass="regButton"/>
                     </af:panelGroupLayout>
-                    <af:panelFormLayout id="pt_pfl1" rendered="false">
-                      <af:panelLabelAndMessage id="pt_plam1"
-                                               label="#{portalResource['username']}"
-                                               for="pt_it1"
-                                               styleClass="NoLabelWrap"
-                                               labelStyle="font-size:small;">
-                        <af:inputText id="pt_it1" simple="true"
-                                      value="#{o_w_s_l_LoginBackingBean.userName}"
-                                      columns="15"/>
-                      </af:panelLabelAndMessage>
-                      <af:panelLabelAndMessage id="pt_plam2"
-                                               label="#{portalResource['password']}"
-                                               for="pt_it2"
-                                               styleClass="NoLabelWrap"
-                                               labelStyle="font-size:small;">
-                        <af:inputText id="pt_it2" simple="true"
-                                      value="#{o_w_s_l_LoginBackingBean.password}"
-                                      columns="15" secret="true"/>
-                      </af:panelLabelAndMessage>
-                    </af:panelFormLayout>
+                    <af:popup id="pt_p1">
+                      <af:noteWindow id="pt_nw1">
+                        <af:panelFormLayout id="pt_pfl1"
+                                            partialTriggers="pt_cb3">
+                          <af:panelLabelAndMessage id="pt_plam1"
+                                                   label="#{portalResource['username']}"
+                                                   for="pt_it1"
+                                                   styleClass="NoLabelWrap"
+                                                   labelStyle="font-size:small;">
+                            <af:inputText id="pt_it1" simple="true"
+                                          value="#{o_w_s_l_LoginBackingBean.userName}"
+                                          columns="15"/>
+                          </af:panelLabelAndMessage>
+                          <af:panelLabelAndMessage id="pt_plam2"
+                                                   label="#{portalResource['password']}"
+                                                   for="pt_it2"
+                                                   styleClass="NoLabelWrap"
+                                                   labelStyle="font-size:small;">
+                            <af:inputText id="pt_it2" simple="true"
+                                          value="#{o_w_s_l_LoginBackingBean.password}"
+                                          columns="15" secret="true"/>
+                          </af:panelLabelAndMessage>
+                        </af:panelFormLayout>
+                        <af:panelGroupLayout id="pt_pgl14" layout="horizontal"
+                                             halign="end">
+                          <af:commandLink id="pt_logincb" text="Sign In"
+                                          action="#{o_w_s_l_LoginBackingBean.doLogin}"
+                                          inlineStyle="font-size:small; margin-left: -40px;"/>
+                          <af:spacer id="pt_s3" width="5px"/>
+                        </af:panelGroupLayout>
+                      </af:noteWindow>
+                    </af:popup>
                     <af:spacer width="3" height="3" id="pt_s2"/>
-                    <af:panelGroupLayout id="pt_pgl14" layout="horizontal"
-                                         halign="end" rendered="false">
-                      <af:commandLink id="pt_logincb" text="Sign In"
-                                      action="#{o_w_s_l_LoginBackingBean.doLogin}"
-                                      inlineStyle="font-size:small; margin-left: -40px;"/>
-                      <af:spacer id="pt_s3" width="5px"/>
-                    </af:panelGroupLayout>
                   </af:subform>
                 </cust:panelCustomizable>
               </af:panelGroupLayout>
@@ -431,12 +439,26 @@
           <af:panelGroupLayout id="pt_pgl18" layout="horizontal"
                                styleClass="companyLinks">
             <af:panelGroupLayout id="pt_pgl12" layout="horizontal">
-              <af:goLink text="About Huduma" id="pt_gl3"
-                         inlineStyle="color:#58595B;"/>
-              <af:goLink text="Huduma Centres" id="pt_gl4"
-                         inlineStyle="color:#58595B;"/>
-              <af:goLink text="Huduma Contacts" id="pt_gl5"
-                         inlineStyle="color:#58595B;"/>
+              <af:commandLink text="About Huduma" id="pt_gl3"
+                              inlineStyle="color:#58595B;" action="pprnav"
+                              actionListener="#{navigationContext.processAction}">
+                        <f:attribute name="node"
+                             value="#{navigationContext.defaultNavigationModel.node['aboutHuduma']}"/>
+             </af:commandLink>
+              <af:commandLink text="Huduma Centres" id="pt_gl4"
+                              inlineStyle="color:#58595B;"
+                              actionListener="#{navigationContext.processAction}"
+                              action="pprnav">
+                <f:attribute name="node"
+                             value="#{navigationContext.defaultNavigationModel.node['hudumaCenters']}"/>
+              </af:commandLink>
+              <af:commandLink text="Huduma Contacts" id="pt_gl5"
+                              inlineStyle="color:#58595B;"
+                              actionListener="#{navigationContext.processAction}"
+                              action="pprnav">
+                <f:attribute name="node"
+                             value="#{navigationContext.defaultNavigationModel.node['hudumaContacts']}"/>
+              </af:commandLink>
             </af:panelGroupLayout>
             <af:panelGroupLayout id="pt_pgl19" layout="horizontal"
                                  halign="end"/>

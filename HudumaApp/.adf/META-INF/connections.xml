@@ -1,6 +1,6 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <References xmlns="http://xmlns.oracle.com/adf/jndi">
-   <Reference name="UCM" className="oracle.vcr.jam.JamRepository" credentialStoreKey="UCM" xmlns="">
+   <Reference name="UCM" className="oracle.vcr.jam.JamRepository" xmlns="">
       <Factory className="oracle.vcr.jam.JamRepositoryFactory"/>
       <RefAddresses>
          <StringRefAddr addrType="oracle.vcr.jam.factoryClassName">
@@ -34,15 +34,11 @@
             <Contents>socket</Contents>
          </StringRefAddr>
          <StringRefAddr addrType="oracle.stellent.jcr.configuration.server.host">
-            <Contents>52.2.171.179</Contents>
+            <Contents>10.0.5.25</Contents>
          </StringRefAddr>
          <StringRefAddr addrType="oracle.stellent.jcr.configuration.server.port">
             <Contents>4444</Contents>
          </StringRefAddr>
-         <StringRefAddr addrType="oracle.stellent.jcr.configuration.server.admin.username">
-            <Contents>weblogic</Contents>
-         </StringRefAddr>
-         <SecureRefAddr addrType="oracle.stellent.jcr.configuration.server.admin.password"/>
       </RefAddresses>
    </Reference>
 </References>

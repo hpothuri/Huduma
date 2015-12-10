@@ -2198,6 +2198,27 @@
         </url>
       </contents>
     </folder>
+    <url id="aboutHuduma" visible="#{true}"
+         factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+         url="content://UCM/Huduma/Home/About Huduma.html">
+      <attributes>
+        <attribute attributeId="Title" value="About Huduma" isKey="false"/>
+      </attributes>
+    </url>
+    <url id="hudumaCenters" visible="#{true}"
+         factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+         url="content://UCM/Huduma/Home/Huduma Centers.html">
+      <attributes>
+        <attribute attributeId="Title" value="Huduma Centers" isKey="false"/>
+      </attributes>
+    </url>
+    <url id="hudumaContacts" visible="#{true}"
+         factoryClass="oracle.webcenter.content.model.rc.ContentUrlResourceFactory"
+         url="content://UCM/Huduma/Home/Huduma Contacts.html">
+      <attributes>
+        <attribute attributeId="Title" value="Huduma Contacts" isKey="false"/>
+      </attributes>
+    </url>
   </contents>
   <schema resourceBundle="oracle.adf.rc.attribute.nls.AttributeBundle">
     <descriptor multivalue="false" shortLabelKey="TITLE.SHORT_PROMPT_KEY"
